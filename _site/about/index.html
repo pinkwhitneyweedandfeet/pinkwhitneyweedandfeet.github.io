@@ -61,14 +61,14 @@
     }
     
     .footnote-ref {
-      color: #0077ff;
+      color: #00ff22;
       cursor: pointer;
       text-decoration: underline;
       text-decoration-style: dotted;
     }
 
     .footnote-ref:hover {
-      color: #6bb5ff;
+      color: #6bff7c;
     }
 
     .footnote-popup {
@@ -136,6 +136,52 @@
   text-decoration: underline;
   text-decoration-style: solid;
    }
+   /* Mobile styles */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .sidebar h1 {
+        margin-bottom: 0;
+        font-size: 18px;
+      }
+
+      .sidebar nav {
+        display: flex;
+        gap: 20px;
+      }
+
+      .sidebar a {
+        display: inline;
+        margin: 0;
+      }
+
+      .main-area {
+        margin-left: 0;
+        padding: 20px;
+        background-image: url('/assets/images/background1.png');
+      }
+
+      .content {
+        padding: 25px;
+      }
+
+      .footnote-popup {
+        max-width: 280px;
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -149,7 +195,8 @@
 
   <div class="main-area">
     <div class="content">
-      
+      <h1>l'appel du vide</h1>
+<p>l</p>
 
     </div>
   </div>
