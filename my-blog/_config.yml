@@ -21,3 +21,4 @@
 title: Your awesome title
 permalink: /:title/
 url: "https://lappelduvi.de"
+baseurl: ""
