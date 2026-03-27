@@ -18,6 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-baseurl: ""  # your repo name with leading slash
+title: lappelduvide
+baseurl: "" 
 url: "https://lappelduvi.de"
+permalink: /:categories/:title/

@@ -53,7 +53,10 @@
     .content {
       background: #000000;
       color: #ffffff;
-      padding: 40px;
+      padding-top: 10px;
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-bottom: 40px;
       max-width: 900px;
       margin: 0 auto;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -71,72 +74,78 @@
       color: #6bff7c;
     }
 
-    .footnote-popup {
-      position: fixed;
-      background: #ffffff;
+    .footnote-ref.expanded {
+      background: #00ff22;
       color: #000000;
-      padding: 15px 20px;
-      border-radius: 0px;
-      max-width: 700px;
-      max-height: 200px;
-      overflow-y: auto;
-      z-index: 1000;
-      display: none;
-      font-size: 14px;
-      line-height: 1.6;
     }
 
-    .footnote-popup.show {
+    /* Expanded footnote styles */
+    .footnote-expansion {
+      background: #000000;
+      margin: 20px;
+      padding-top: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+      display: none;
+      position: relative;
+    }
+
+    .footnote-expansion.show {
       display: block;
     }
 
-    .footnote-popup::before {
-      content: '';
+    .footnote-expansion::before {
+      content: '*';
       position: absolute;
-      top: -8px;
-      left: 20px;
-      width: 0;
-      height: 0;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-bottom: 8px solid #ffffff;
+      top: 10px;
+      left: 10px;
+      color: #00ff22;
+      font-size: 24px;
     }
 
-    .footnote-close {
-      position: absolute;
-      top: 8px;
-      right: 10px;
+    .footnote-expansion-content {
+      color: #ffffff;
+      line-height: 1.2;
+      font-size: 15px;
+    }
+
+    .footnote-expansion-close {
+      margin-top: 15px;
+      color: #00ff22;
       cursor: pointer;
-      font-size: 18px;
-      color: #666;
-      font-weight: bold;
-      line-height: 1;
+      font-size: 14px;
+      text-align: right;
     }
 
-    .footnote-close:hover {
-      color: #000;
+    .footnote-expansion-close:hover {
+      color: #6bff7c;
     }
 
-      h1 {
-    margin-bottom: 1px;
+    h1 {
+      margin-bottom: 1px;
     }
 
-      h2 {
-    margin-bottom: 1px;
+    h2 {
+      margin-bottom: 1px;
     }
 
-      p {
-    margin-top: 0px; 
-    line-height: 1.5; 
-   }
+    p {
+      margin-top: 0px; 
+      line-height: 1.2; 
+    }
 
-   a {
-  color: #0077ff;
-  cursor: pointer;
-  text-decoration: underline;
-  text-decoration-style: solid;
-   }
-   /* Mobile styles */
+    a {
+      color: #0077ff;
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-style: solid;
+    }
+
+    li {
+      line-height: 1.2;
+    }
+
+    /* Mobile styles */
     @media (max-width: 768px) {
       body {
         flex-direction: column;
@@ -177,9 +186,9 @@
         padding: 25px;
       }
 
-      .footnote-popup {
-        max-width: 280px;
-        font-size: 13px;
+      .footnote-expansion {
+        margin: 20px -25px;
+        padding: 20px 25px 20px 40px;
       }
     }
   </style>
@@ -194,74 +203,114 @@
   </div>
 
   <div class="main-area">
-    <div class="content">
+    <div class="content" id="main-content">
       <h1>l'appel du vide</h1>
 <p>l</p>
 
     </div>
   </div>
 
-  <div id="footnote-popup" class="footnote-popup">
-    <span class="footnote-close" onclick="hideFootnote()">&times;</span>
-    <div id="footnote-content"></div>
-  </div>
-
   <script>
-    let currentPopup = null;
-
     function showFootnote(event, text) {
       event.preventDefault();
       event.stopPropagation();
       
-      const popup = document.getElementById('footnote-popup');
-      const content = document.getElementById('footnote-content');
+      const refElement = event.target;
       
-      content.innerHTML = text;
-      popup.classList.add('show');
+      // If this footnote is already expanded, close it
+      const existingExpansion = document.querySelector(`.footnote-expansion[data-ref-id="${refElement.dataset.footnoteId}"]`);
+      if (existingExpansion) {
+        closeExpandedFootnote(existingExpansion.querySelector('.footnote-expansion-close'));
+        return;
+      }
       
-      // Position the popup near the click
-      const x = event.clientX;
-      const y = event.clientY;
+      // Close all other expanded footnotes
+      closeAllExpandedFootnotes();
       
-      // Set initial position
-      popup.style.left = x + 'px';
-      popup.style.top = (y + 15) + 'px';
+      // Mark reference as expanded
+      refElement.classList.add('expanded');
       
-      // Adjust if popup goes off screen
-      setTimeout(() => {
-        const rect = popup.getBoundingClientRect();
-        
-        if (rect.right > window.innerWidth) {
-          popup.style.left = (window.innerWidth - rect.width - 20) + 'px';
-        }
-        
-        if (rect.bottom > window.innerHeight) {
-          popup.style.top = (y - rect.height - 15) + 'px';
-          // Move arrow to bottom
-          popup.style.setProperty('--arrow-position', 'bottom');
-        }
-      }, 10);
+      // Find the closest block-level element to insert after
+      let insertAfter = findInsertionPoint(refElement);
       
-      currentPopup = popup;
+      // Create expansion
+      const expansion = document.createElement('div');
+      expansion.className = 'footnote-expansion show';
+      expansion.innerHTML = `
+        <div class="footnote-expansion-content">${text}</div>
+        <div class="footnote-expansion-close" onclick="closeExpandedFootnote(this)">
+          [close]
+        </div>
+      `;
+      
+      // Create unique ID for linking
+      if (!refElement.dataset.footnoteId) {
+        refElement.dataset.footnoteId = `footnote-${Date.now()}`;
+      }
+      expansion.dataset.refId = refElement.dataset.footnoteId;
+      
+      // Insert the expansion
+      insertAfter.parentNode.insertBefore(expansion, insertAfter.nextSibling);
     }
 
-    function hideFootnote() {
-      const popup = document.getElementById('footnote-popup');
-      popup.classList.remove('show');
-      currentPopup = null;
+    function findInsertionPoint(element) {
+      // Walk up the DOM tree to find appropriate insertion point
+      let current = element;
+      
+      // Block-level elements where we want to insert after
+      const blockElements = ['P', 'DIV', 'BLOCKQUOTE', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'LI', 'PRE', 'ARTICLE', 'SECTION'];
+      
+      while (current && current !== document.body) {
+        if (blockElements.includes(current.tagName)) {
+          return current;
+        }
+        current = current.parentElement;
+      }
+      
+      // Fallback to the element itself
+      return element;
     }
 
-    // Close popup when clicking outside
+    function closeExpandedFootnote(closeButton) {
+      const expansion = closeButton.closest('.footnote-expansion');
+      if (!expansion) return;
+      
+      // Remove highlight from reference
+      const refId = expansion.dataset.refId;
+      if (refId) {
+        const refElement = document.querySelector(`[data-footnote-id="${refId}"]`);
+        if (refElement) {
+          refElement.classList.remove('expanded');
+        }
+      }
+      
+      // Remove expansion
+      expansion.remove();
+    }
+
+    function closeAllExpandedFootnotes() {
+      document.querySelectorAll('.footnote-expansion').forEach(exp => {
+        const closeBtn = exp.querySelector('.footnote-expansion-close');
+        if (closeBtn) closeExpandedFootnote(closeBtn);
+      });
+      
+      document.querySelectorAll('.footnote-ref.expanded').forEach(ref => {
+        ref.classList.remove('expanded');
+      });
+    }
+
+    // Close expanded footnotes when clicking outside
     document.addEventListener('click', function(event) {
-      if (currentPopup && !currentPopup.contains(event.target) && !event.target.classList.contains('footnote-ref')) {
-        hideFootnote();
+      if (!event.target.classList.contains('footnote-ref') && 
+          !event.target.closest('.footnote-expansion')) {
+        closeAllExpandedFootnotes();
       }
     });
 
-    // Close popup on escape key
+    // Close on escape key
     document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape' && currentPopup) {
-        hideFootnote();
+      if (event.key === 'Escape') {
+        closeAllExpandedFootnotes();
       }
     });
   </script>

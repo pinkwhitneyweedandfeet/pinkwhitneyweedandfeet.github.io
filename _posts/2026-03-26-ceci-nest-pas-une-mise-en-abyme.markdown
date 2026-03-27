@@ -3,8 +3,9 @@ layout: default
 title:  "ceci n'est pas une mise en abyme"
 subtitle: "or: it's fine to say that women are people who identify as women"
 date:   2026-03-26 19:56:27 -0500
-image: "/assets/images/ceci1.jpg"
+image: "/assets/images/ceci.jpg"
 categories: writing
+permalink: /:categories/:title/
 ---
 <h1>ceci n'est pas une mise en abyme</h1>
 (or: it's fine to say that women are people who identify as women)

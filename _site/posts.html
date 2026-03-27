@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>writing</title>
   <style>
     body {
         margin: 0;
@@ -205,18 +205,59 @@
   <div class="main-area">
     <div class="content" id="main-content">
       <style>
-        .content {
-      background: #00000000;
-      color: #ffffff;
-      padding: 40px;
-      max-width: 900px;
-      margin: 0 auto;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      position: relative;
-    }
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  .post-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .post-image {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .post-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #0077ff;
+    text-decoration: underline
+  }
+
+  .post-subtitle {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+
+  .post-date {
+    font-size: 14px;
+    color: #ffffff;
+  }
 </style>
 
-<h1></h1>
+<h1>writing</h1>
+
+<div class="posts-grid">
+  
+  <a href="/writing/ceci-nest-pas-une-mise-en-abyme/" class="post-card">
+    <img src="/assets/images/ceci.jpg" alt="ceci n'est pas une mise en abyme" class="post-image" />
+    <div class="post-title">ceci n'est pas une mise en abyme</div>
+    <div class="post-subtitle">or: it's fine to say that women are people who identify as women</div>
+    <div class="post-date">26-03-2026</div>
+  </a>
+  
+</div>
 
     </div>
   </div>
