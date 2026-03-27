@@ -19,6 +19,5 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Your awesome title
-permalink: /:title/
 url: "https://pinkwhitneyweedandfeet.github.io"
 baseurl: ""
