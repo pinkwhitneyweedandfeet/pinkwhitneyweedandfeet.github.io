@@ -6,7 +6,7 @@ title: writing
 <style>
   .posts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 40px;
     margin-top: 20px;
   }
@@ -15,50 +15,22 @@ title: writing
     display: block;
     text-decoration: none;
     color: inherit;
+    border: 2px solid #fff;
+    padding: 30px
   }
 
   .post-image {
-    width: 400px;
-    height: 300px;
+    width: 300px;
+    height: 150px;
     object-fit: cover;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 15px;
   }
 
-  .post-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #0077ff;
-    text-decoration: underline
-  }
-
-  .post-subtitle {
-    font-size: 16px;
-    color: #ffffff;
-    margin-bottom: 8px;
-  }
-
-  .post-date {
-    font-size: 14px;
-    color: #ffffff;
-  }
 </style>
 
-<h1>finished</h1>
-
-<div class="posts-grid">
-  {% for post in site.posts %}
-  <a href="{{ post.url | relative_url }}" class="post-card">
-    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="post-image">
-    <div class="post-title">{{ post.title }}</div>
-    <div class="post-subtitle">{{ post.subtitle }}</div>
-    <div class="post-date">{{ post.date | date: "%d-%m-%Y" }}</div>
-  </a>
-  {% endfor %}
-</div>
-
-<h1>unfinished<h1>
 <div class="posts-grid">
   {% for post in site.posts %}
   <a href="{{ post.url | relative_url }}" class="post-card">

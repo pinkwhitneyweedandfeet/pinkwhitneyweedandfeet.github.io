@@ -121,7 +121,6 @@
     }
 
     h1 {
-      margin-top: 10px;
       margin-bottom: 1px;
     }
 
@@ -160,44 +159,6 @@
       padding-top: 20px;
     }
 
-    hr {
-      color: #fff;
-      margin-bottom: 0px;
-    }
-    
-      .post-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #0077ff;
-    text-decoration: underline;
-    text-align: center;
-  }
-
-  .post-subtitle {
-    font-size: 14px;
-    color: #ffffff;
-    margin-bottom: 8px;
-    text-align: center;
-  }
-
-  .post-date {
-    font-size: 14px;
-    color: #d1d1d1;
-    text-align: center;
-  }
-  .post-nav {
-    display: flex;
-    margin-top: 40px;
-  }
-
-  .post-nav .prev {
-    margin-right: auto;
-  }
-
-  .post-nav .next {
-    margin-left: auto;
-  }
     /* les portables */
     @media screen and (max-width: 1200px) {
       body {
@@ -247,7 +208,6 @@
         margin: 20px -25px;
         padding: 20px 25px 20px 40px;
       }
-
     }
   </style>
 </head>
@@ -264,19 +224,6 @@
     <div class="content" id="main-content">
       {{ content }}
       <img src="{{ '/assets/images/trans.png' | relative_url }}" class="content-image">
-<div class="post-nav">
-        {% if page.next %}
-          <a class="prev" href="{{ page.next.url }}">
-            ← {{ page.next.title }}
-          </a>
-        {% endif %}
-
-        {% if page.previous %}
-          <a class="next" href="{{ page.previous.url }}">
-            {{ page.previous.title }} →
-          </a>
-        {% endif %}
-      </div>
     </div>
   </div>
 

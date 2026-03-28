@@ -14,4 +14,3 @@ layout: default
       position: relative;
     }
 </style>
-<h1></h1>
