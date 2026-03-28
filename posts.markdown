@@ -45,8 +45,20 @@ title: writing
   }
 </style>
 
-<h1>writing</h1>
+<h1>finished</h1>
 
+<div class="posts-grid">
+  {% for post in site.posts %}
+  <a href="{{ post.url | relative_url }}" class="post-card">
+    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="post-image">
+    <div class="post-title">{{ post.title }}</div>
+    <div class="post-subtitle">{{ post.subtitle }}</div>
+    <div class="post-date">{{ post.date | date: "%d-%m-%Y" }}</div>
+  </a>
+  {% endfor %}
+</div>
+
+<h1>unfinished<h1>
 <div class="posts-grid">
   {% for post in site.posts %}
   <a href="{{ post.url | relative_url }}" class="post-card">

@@ -146,7 +146,7 @@
     }
 
     /* Mobile styles */
-    @media (max-width: 768px) {
+    @media screen and (max-width: 1200px) {
       body {
         flex-direction: column;
       }
@@ -179,7 +179,9 @@
       .main-area {
         margin-left: 0;
         padding: 20px;
-        background-image: url('/assets/images/background1.png');
+        background-image: url('/assets/images/ground2.jpg');
+        flex-direction: row;
+        background-attachment: fixed;
       }
 
       .content {
@@ -195,7 +197,7 @@
 </head>
 <body>
   <div class="sidebar">
-    <h1>l'appel du vide</h1>
+    <a href="/"><h1>l'appel du vide</h1></a>
     <nav>
       <a href="/about">harper is who?</a>
       <a href="/posts">writing</a>

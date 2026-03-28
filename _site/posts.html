@@ -146,7 +146,7 @@
     }
 
     /* Mobile styles */
-    @media (max-width: 768px) {
+    @media screen and (max-width: 1200px) {
       body {
         flex-direction: column;
       }
@@ -179,7 +179,9 @@
       .main-area {
         margin-left: 0;
         padding: 20px;
-        background-image: url('/assets/images/background1.png');
+        background-image: url('/assets/images/ground2.jpg');
+        flex-direction: row;
+        background-attachment: fixed;
       }
 
       .content {
@@ -195,7 +197,7 @@
 </head>
 <body>
   <div class="sidebar">
-    <h1>l'appel du vide</h1>
+    <a href="/"><h1>l'appel du vide</h1></a>
     <nav>
       <a href="/about">harper is who?</a>
       <a href="/posts">writing</a>
@@ -246,7 +248,7 @@
   }
 </style>
 
-<h1>writing</h1>
+<h1>finished</h1>
 
 <div class="posts-grid">
   
@@ -258,6 +260,19 @@
   </a>
   
 </div>
+
+<h1>unfinished<h1>
+<div class="posts-grid">
+  
+  <a href="/writing/ceci-nest-pas-une-mise-en-abyme/" class="post-card">
+    <img src="/assets/images/ceci.jpg" alt="ceci n'est pas une mise en abyme" class="post-image" />
+    <div class="post-title">ceci n'est pas une mise en abyme</div>
+    <div class="post-subtitle">or: it's fine to say that women are people who identify as women</div>
+    <div class="post-date">26-03-2026</div>
+  </a>
+  
+</div>
+</h1></h1>
 
     </div>
   </div>
