@@ -236,8 +236,10 @@
         padding: 20px;
         background-image: url('{{ page.bg1| default: "/assets/images/ground2.jpg" | relative_url }}');
         flex-direction: row;
-        background-attachment: fixed;
-        position: sticky;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
         max-height: 110%;
       }
 
