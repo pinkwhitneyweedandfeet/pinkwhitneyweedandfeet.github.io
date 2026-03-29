@@ -28,6 +28,14 @@ title: writing
     margin-right: auto;
     margin-bottom: 15px;
   }
+  .post-wordcount {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    color: #d1d1d1;
+    margin-bottom: 8px;
+    text-align: center;
+  }
 
 </style>
 
@@ -37,6 +45,9 @@ title: writing
     <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="post-image">
     <div class="post-title">{{ post.title }}</div>
     <div class="post-subtitle">{{ post.subtitle }}</div>
+    {% assign words = post.content | number_of_words %}
+    {% assign minutes = words | divided_by: 250 | ceil %}
+    <div class="post-wordcount">{{ words }} words ({{ minutes }} min read)</div>
     <div class="post-date">{{ post.date | date: "%d-%m-%Y" }}</div>
   </a>
   {% endfor %}

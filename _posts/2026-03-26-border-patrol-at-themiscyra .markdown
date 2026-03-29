@@ -10,5 +10,6 @@ permalink: /:categories/:title/
 <hr>
 <h1>{{ page.title }}</h1>
 ({{ page.subtitle }})
+<br>{% assign words = page.content | number_of_words %} {% assign minutes = words | divided_by: 250 | ceil %} ~{{ words }} words (~{{minutes}} minute read)
 <br>{{ page.date | date: "%d %m %Y" }}
 <hr>

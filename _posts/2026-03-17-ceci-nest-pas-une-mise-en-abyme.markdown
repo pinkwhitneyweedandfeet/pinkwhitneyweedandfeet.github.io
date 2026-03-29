@@ -10,6 +10,7 @@ permalink: /:categories/:title/
 <hr>
 <h1>ceci n'est pas une <a href ="https://fr.wikipedia.org/wiki/Mise_en_abyme">mise en abyme</a></h1>
 ({{ page.subtitle }})
+<br>{% assign words = page.content | number_of_words %} {% assign minutes = words | divided_by: 250 | ceil %} ~{{ words }} words (~{{minutes}} minute read)
 <br>{{ page.date | date: "%d %m %Y" }}
 <hr>
 <br>
