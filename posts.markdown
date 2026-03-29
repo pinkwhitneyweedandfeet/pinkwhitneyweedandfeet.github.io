@@ -15,13 +15,13 @@ title: writing
     display: block;
     text-decoration: none;
     color: inherit;
-    border: 2px solid #fff;
-    padding: 30px
+    border: 1px solid #fff;
+    padding-bottom: 30px;
   }
 
   .post-image {
-    width: 300px;
-    height: 150px;
+    width: 100%;
+    height: 200px;
     object-fit: cover;
     display: block;
     margin-left: auto;
