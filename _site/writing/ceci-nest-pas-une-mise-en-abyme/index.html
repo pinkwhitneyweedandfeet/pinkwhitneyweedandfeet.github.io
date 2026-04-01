@@ -7,6 +7,10 @@
   <meta property="og:url" content="http://localhost:4000/writing/ceci-nest-pas-une-mise-en-abyme/">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="icon" href="/assets/images/trans.png" type="image/png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ceci n'est pas une mise en abyme">
@@ -243,11 +247,12 @@
     @media screen and (max-width: 1200px) {
       body {
         flex-direction: column;
+        background-color: #000000;
       }
 
       .sidebar {
         width: 100%;
-        height: 60px;
+        height: 100px;
         position: static;
         padding: 15px 20px;
         display: flex;
@@ -287,15 +292,15 @@
   background-image: url('/assets/images/aleksandr.jpg');
   flex-direction: row;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
   width: 100%;
   image-rendering: pixelated;
   box-sizing: border-box;
   background-attachment: scroll;
-  height: calc(100vh - 60px); 
-  max-height: calc(100vh - 60px);
-  overflow: hidden;
+  max-height: none;
+  height: auto;
+  overflow: visible;
       }
 
       .content {
@@ -303,8 +308,8 @@
       }
 
       html, body {
-  overflow: hidden;
-  height: 100%;
+  overflow: visible;
+  height: auto;
 }
 
       .footnote-expansion {
