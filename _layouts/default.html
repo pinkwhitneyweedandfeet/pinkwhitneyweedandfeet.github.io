@@ -12,7 +12,7 @@
   <meta name="twitter:title" content="{{ page.title | default: 'l&#39;appel du vide' }}">
   <meta name="twitter:description" content="{{ page.subtitle | default: 'the call of the void' }}">
   <meta name="twitter:image" content="{{ '/assets/images/embed.png' | absolute_url }}">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#000000"/>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
   <style>
@@ -290,14 +290,20 @@
   background-repeat: no-repeat;
   overflow: hidden;
   width: 100%;
-  max-height: none;        /* remove the 110% — this is likely causing the bottom bar */
+  max-height: none;        
   image-rendering: pixelated;
   box-sizing: border-box;
+  background-attachment: scroll;
       }
 
       .content {
         padding: 25px;
       }
+
+      html, body {
+  overflow: hidden;
+  max-width: 100%;
+}
 
       .footnote-expansion {
         margin: 20px -25px;
