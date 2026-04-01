@@ -266,6 +266,7 @@
       .sidebar nav {
         display: flex;
         font-size: 30px;
+        gap: 20px;
       }
       
       .sidebar h1 {
@@ -280,16 +281,18 @@
       }
 
       .main-area {
-        margin-left: 0;
-        padding: 20px;
-        background-image: url('{{ page.bg1| default: "/assets/images/aleksandr.jpg" | relative_url }}');
-        flex-direction: row;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        overflow: hidden;
-        max-height: 110%;
-        image-rendering: pixelated;
+         margin-left: 0;
+  padding: 0px;
+  background-image: url('{{ page.bg1| default: "/assets/images/aleksandr.jpg" | relative_url }}');
+  flex-direction: row;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  width: 100%;
+  max-height: none;        /* remove the 110% — this is likely causing the bottom bar */
+  image-rendering: pixelated;
+  box-sizing: border-box;
       }
 
       .content {
@@ -307,6 +310,7 @@
 
 body {
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .main-area {
