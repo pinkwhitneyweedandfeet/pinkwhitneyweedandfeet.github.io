@@ -253,9 +253,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        overflow: visible;
+        overflow: hidden;
         background: #000000;
         color: #ffffff;
+         box-sizing: border-box;
       }
 
       .sidebar h1 {
@@ -288,12 +289,13 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: hidden;
   width: 100%;
-  max-height: none;        
   image-rendering: pixelated;
   box-sizing: border-box;
   background-attachment: scroll;
+  height: calc(100vh - 60px); 
+  max-height: calc(100vh - 60px);
+  overflow: hidden;
       }
 
       .content {
@@ -302,7 +304,7 @@
 
       html, body {
   overflow: hidden;
-  max-width: 100%;
+  height: 100%;
 }
 
       .footnote-expansion {
