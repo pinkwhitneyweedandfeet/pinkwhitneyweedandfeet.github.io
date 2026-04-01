@@ -23,15 +23,20 @@
     }
 
     .sidebar {
-      width: 220px;
+      width: 0px;
       background: #ffffff;
       color: #000000;
-      padding: 20px;
+      padding-top: 20px;
       height: 100vh;
       box-sizing: border-box;
       position: fixed;
       left: 0;
       top: 0;
+      z-index: 10;
+    }
+
+    .siderbar a {
+      overflow: hidden;
     }
 
     .sidebar h1 {
@@ -46,13 +51,9 @@
       margin: 10px 0;
     }
 
-    .sidebar a:hover {
-      color: #000000;
-    }
 
     .main-area {
       flex: 1;
-      margin-left: 220px;
       min-height: 100vh;
       background-image: url('{{ "/assets/images/background1.png" | relative_url }}');
       background-size: cover;
@@ -61,6 +62,10 @@
       padding: 40px;
       box-sizing: border-box;
       image-rendering: crisp-edges;
+    }
+
+    .bgimg {
+      filter: invert();
     }
 
     .content {
@@ -76,18 +81,18 @@
     }
     
     .footnote-ref {
-      color: #00ff22;
+      color: #ff8000;
       cursor: pointer;
       text-decoration: underline;
       text-decoration-style: dotted;
     }
 
     .footnote-ref:hover {
-      color: #6bff7c;
+      color: #ffa042;
     }
 
     .footnote-ref.expanded {
-      background: #00ff22;
+      background: #ff8000;
       color: #000000;
     }
 
@@ -110,7 +115,7 @@
       position: absolute;
       top: 10px;
       left: 10px;
-      color: #00ff22;
+      color: #ff8000;
       font-size: 24px;
     }
 
@@ -122,14 +127,14 @@
 
     .footnote-expansion-close {
       margin-top: 15px;
-      color: #00ff22;
+      color: #ff8000;
       cursor: pointer;
       font-size: inherit;
       text-align: right;
     }
 
     .footnote-expansion-close:hover {
-      color: #6bff7c;
+      color: #ffa042;
     }
 
     h1 {
@@ -161,6 +166,7 @@
       background: #000;
       border-left: 2px solid  #fcfcfc;
       padding: 3px 10px;
+      margin-left: 10px;
     }
 
       .content-image {
@@ -207,6 +213,29 @@
     margin-right: auto;
   }
 
+  beginquote {
+    text-align: justify;
+    display: block;
+    font-style: italic;
+    color: #b9b9b9;
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+
+  credit {
+    text-align: right;
+    display: block;
+    color:#b9b9b9;
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+
+  p + ol, ol + p {
+    margin-top: -15px;
+  }
+
+
+
   .post-nav .next {
     margin-left: auto;
   }
@@ -224,6 +253,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        overflow: visible;
+        background: #000000;
+        color: #ffffff;
       }
 
       .sidebar h1 {
@@ -236,17 +268,22 @@
         font-size: 30px;
         gap: 20px;
       }
+      
+      .sidebar h1 {
+        color: #ffffff;
+      }
 
       .sidebar a {
         display: inline;
         font-size: 30px;
         margin: 0;
+        color: #ffffff;
       }
 
       .main-area {
         margin-left: 0;
         padding: 20px;
-        background-image: url('{{ page.bg1| default: "/assets/images/ground2.jpg" | relative_url }}');
+        background-image: url('{{ page.bg1| default: "/assets/images/aleksandr.jpg" | relative_url }}');
         flex-direction: row;
         background-size: cover;
         background-position: center;
@@ -265,18 +302,55 @@
         padding: 20px 25px 20px 40px;
       }
 
+      .closebtn, .openbtn {
+  display: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.main-area {
+  width: 100%;
+}
+
     }
+.closebtn {
+  right: -50px;
+}
+
+.openbtn {
+  right: -50px;
+}
+
+.closebtn,
+.openbtn {
+  position: absolute;
+  transform: translateY(-50%);
+  font-size: 36px;
+  cursor: pointer;
+  color: #ffffff !important;
+  background: none;
+  border: none;
+  top: 50%;
+  padding: 0;
+}
   </style>
 </head>
 <body>
-  <div class="sidebar">
-    <a href="{{ '/' | relative_url}}"><h1>l'appel du vide</h1></a>
+  <div id="sidebar" class="sidebar">
+    <a href="{{ '/' | relative_url}}" class="navlink"><h1>l'appel du vide</h1></a>
     <nav>
-      <a href="{{ '/about' | relative_url }}">harper is who?</a>
-      <a href="{{ '/posts' | relative_url }}">writing</a>
+      <a href="{{ '/about' | relative_url }}" class="navlink">harper is who?</a>
+      <a href="{{ '/posts' | relative_url }}" class="navlink">writing</a>
+      <a href="javascript:void(0)" class="closebtn" id="closebtn" onclick="closeNav()">
+        ×
+      </a>
+      <a href="javascript:void(0)" class="openbtn" id= "openbtn" onclick="openNav()">
+         <b>☰</b>
+      </a>
     </nav>
   </div>
-
   <div class="main-area">
     <div class="content" id="main-content">
       {{ content }}
@@ -373,6 +447,32 @@
         closeAllExpandedFootnotes();
       }
     });
+
+function openNav() {
+  const sidebar = document.getElementById("sidebar");
+  sidebar.style.width = "220px";
+  sidebar.style.paddingLeft = "20px";
+
+  document.getElementById("openbtn").style.display = "none";
+  document.getElementById("closebtn").style.display = "inline";
+  sidebar.querySelectorAll("h1, a.navlink").forEach(el => el.style.display = "");
+}
+function closeNav() {
+  const sidebar = document.getElementById("sidebar");
+  sidebar.style.width = "0";
+  sidebar.style.paddingLeft = "0";
+
+  document.getElementById("openbtn").style.display = "inline";
+  document.getElementById("closebtn").style.display = "none";
+  sidebar.querySelectorAll("h1, a.navlink").forEach(el => el.style.display = "none");
+}
+
+window.onload = function() {
+  if (window.innerWidth >= 1200) {
+    document.getElementById("closebtn").style.display = "none";
+    document.getElementById("sidebar").querySelectorAll("h1, a.navlink").forEach(el => el.style.display = "none");
+  }
+}
   </script>
 </body>
 </html>
