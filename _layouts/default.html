@@ -291,24 +291,34 @@
   }
 
   .main-area {
-    margin-left: 0;
-    padding: 0px;
-    background-image: url('{{ page.bg1| default: "/assets/images/aleksandr.jpg" | relative_url }}');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    width: 100%;
-    min-height: 100vh; /* Changed from height: auto */
-    image-rendering: pixelated;
-    box-sizing: border-box;
-    position: relative; /* Added */
-  }
+  margin-left: 0;
+  padding: 0px;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+}
 
-  .content {
-    padding: 25px;
-    margin-bottom: 0; /* Ensure no bottom margin */
-  }
+.main-area::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('{{ page.bg1| default: "/assets/images/aleksandr.jpg" | relative_url }}');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  z-index: -1;
+}
+
+.content {
+  padding: 25px;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1; 
 
   html, body {
     overflow-x: hidden;
