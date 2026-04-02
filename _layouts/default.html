@@ -3,7 +3,7 @@
 <head>
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:description" content="{{ page.subtitle | default: 'the call of the void' }}">
-  <meta property="og:image" content="{{ '/assets/images/embed.png' | absolute_url }}">
+  <meta property="og:image" content="{{ page.embedimage | default: '/assets/images/embed.png' | absolute_url }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#000000">
@@ -15,7 +15,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page.title | default: 'l&#39;appel du vide' }}">
   <meta name="twitter:description" content="{{ page.subtitle | default: 'the call of the void' }}">
-  <meta name="twitter:image" content="{{ page.embedimage | default: '/assets/images/embed.png' | absolute_url }}">
+{% if page.embedimage %}
+  <meta name="twitter:image" content="{{ page.embedimage }}">
+{% else %}
+  <meta name="twitter:image" content="{{ '/assets/images/embed.png' | absolute_url }}">
+{% endif %}
   <meta name="theme-color" content="#000000"/>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
