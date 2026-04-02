@@ -15,7 +15,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page.title | default: 'l&#39;appel du vide' }}">
   <meta name="twitter:description" content="{{ page.subtitle | default: 'the call of the void' }}">
-  <meta name="twitter:image" content="{{ '/assets/images/embed.png' | absolute_url }}">
+  <meta name="twitter:image" content="{{ page.embedimage | default: '/assets/images/embed.png' | absolute_url }}">
   <meta name="theme-color" content="#000000"/>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>

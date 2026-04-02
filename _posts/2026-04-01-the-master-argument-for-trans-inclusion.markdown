@@ -6,6 +6,7 @@ date:   2026-04-01 1:56:27 -0500
 image: "/assets/images/apples.png"
 categories: writing
 permalink: /:categories/:title/
+embedimage: "/assets/images/applesbig.png"
 ---
 <hr>
 <h1>{{ page.title }}</h1>
