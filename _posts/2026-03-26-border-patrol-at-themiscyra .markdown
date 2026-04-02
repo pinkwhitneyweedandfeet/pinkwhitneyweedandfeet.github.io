@@ -6,6 +6,7 @@ date:   2026-03-26 19:56:27 -0500
 image: "/assets/images/diana.jpg"
 categories: writing
 permalink: /:categories/:title/
+embedimage: "/assets/images/dianabig.jpg"
 published: false
 ---
 <hr>

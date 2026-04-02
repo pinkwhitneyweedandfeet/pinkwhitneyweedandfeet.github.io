@@ -3,7 +3,7 @@ layout: default
 title:  "ceci n'est pas une mise en abyme"
 subtitle: "or: it's fine to say that women are people who identify as women"
 date:   2026-03-17 19:56:27 -0500
-image: "/assets/images/MagrittePipe.png"
+image: "/assets/images/MagrittePipebig.png"
 categories: writing
 permalink: /:categories/:title/
 ---
