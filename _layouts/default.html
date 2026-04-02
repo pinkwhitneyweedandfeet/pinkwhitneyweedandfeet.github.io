@@ -244,93 +244,85 @@
     margin-left: auto;
   }
     /* les portables */
-    @media screen and (max-width: 1200px) {
-      body {
-        flex-direction: column;
-        background-color: #000000;
-      }
+    /* les portables */
+@media screen and (max-width: 1200px) {
+  body {
+    flex-direction: column;
+    background-color: #000000;
+    overflow-x: hidden;
+  }
 
-      .sidebar {
-        width: 100%;
-        height: 100px;
-        position: static;
-        padding: 15px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        overflow: hidden;
-        background: #000000;
-        color: #ffffff;
-         box-sizing: border-box;
-      }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    background: #000000;
+    color: #ffffff;
+    box-sizing: border-box;
+  }
 
-      .sidebar h1 {
-        margin-bottom: 0;
-        font-size: 30px;
-      }
+  .sidebar h1 {
+    margin-bottom: 0;
+    font-size: 30px;
+    color: #ffffff;
+  }
 
-      .sidebar nav {
-        display: flex;
-        font-size: 30px;
-        gap: 20px;
-      }
-      
-      .sidebar h1 {
-        color: #ffffff;
-      }
+  .sidebar nav {
+    display: flex;
+    font-size: 30px;
+    gap: 20px;
+  }
 
-      .sidebar a {
-        display: inline;
-        font-size: 30px;
-        margin: 0;
-        color: #ffffff;
-      }
+  .sidebar a {
+    display: inline;
+    font-size: 30px;
+    margin: 0;
+    color: #ffffff;
+  }
 
-      .main-area {
-         margin-left: 0;
-  padding: 0px;
-  background-image: url('{{ page.bg1| default: "/assets/images/aleksandr.jpg" | relative_url }}');
-  flex-direction: row;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  width: 100%;
-  image-rendering: pixelated;
-  box-sizing: border-box;
-  background-attachment: scroll;
-  max-height: none;
-  height: auto;
-  overflow: visible;
-      }
+  /* Hide the nav buttons completely on mobile */
+  .closebtn, .openbtn {
+    display: none !important;
+  }
 
-      .content {
-        padding: 25px;
-      }
+  .main-area {
+    margin-left: 0;
+    padding: 0px;
+    background-image: url('{{ page.bg1| default: "/assets/images/aleksandr.jpg" | relative_url }}');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    width: 100%;
+    min-height: 100vh; /* Changed from height: auto */
+    image-rendering: pixelated;
+    box-sizing: border-box;
+    position: relative; /* Added */
+  }
 
-      html, body {
-  overflow: visible;
-  height: auto;
+  .content {
+    padding: 25px;
+    margin-bottom: 0; /* Ensure no bottom margin */
+  }
+
+  html, body {
+    overflow-x: hidden;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footnote-expansion {
+    margin: 20px -25px;
+    padding: 20px 25px 20px 40px;
+  }
 }
 
-      .footnote-expansion {
-        margin: 20px -25px;
-        padding: 20px 25px 20px 40px;
-      }
-
-      .closebtn, .openbtn {
-  display: none;
-}
-
-body {
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-.main-area {
-  width: 100%;
-}
-
-    }
 .closebtn {
   right: -50px;
 }
