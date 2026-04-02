@@ -13,5 +13,20 @@ layout: default
       margin: 0 auto;
       position: relative;
     }
-    
+      .main-area {
+    margin-left: 0;
+    padding: 0px;
+    background-image: url('{{ page.bg1| default: "/assets/images/aleksandr.jpg" | relative_url }}');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    image-rendering: pixelated;
+    box-sizing: border-box;
+    position: fixed;
+  }
+
 </style>
