@@ -299,7 +299,7 @@
   .main-area {
     margin-left: 0;
     padding: 0px;
-    background-image: url('/assets/images/aleksandr.jpg');
+    background-image: none;
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -376,7 +376,24 @@
       margin: 0 auto;
       position: relative;
     }
-    
+    @media screen and (max-width: 1200px) {
+      .main-area {
+    margin-left: 0;
+    padding: 0px;
+    background-image: url('/assets/images/aleksandr.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    image-rendering: pixelated;
+    box-sizing: border-box;
+    position: fixed;
+  }
+    }
+
 </style>
 
 

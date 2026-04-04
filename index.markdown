@@ -13,6 +13,7 @@ layout: default
       margin: 0 auto;
       position: relative;
     }
+    @media screen and (max-width: 1200px) {
       .main-area {
     margin-left: 0;
     padding: 0px;
@@ -28,5 +29,6 @@ layout: default
     box-sizing: border-box;
     position: fixed;
   }
+    }
 
 </style>
