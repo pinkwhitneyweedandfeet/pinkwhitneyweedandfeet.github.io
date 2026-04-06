@@ -2,7 +2,6 @@
 layout: default
 title: writing
 ---
-
 <style>
   .posts-grid {
     display: grid;

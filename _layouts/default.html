@@ -190,6 +190,17 @@
       padding-top: 60px;
     }
 
+    .nav-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-height: 25px;
+      max-width: 25px;
+      padding-top: 0px;
+      margin: 0;
+      padding: 0;
+    }
+
     hr {
       color: #fff;
       margin-bottom: 0px;
@@ -357,8 +368,9 @@
   <div id="sidebar" class="sidebar">
     <a href="{{ '/' | relative_url}}" class="navlink"><h1>l'appel du vide</h1></a>
     <nav>
-      <a href="{{ '/about' | relative_url }}" class="navlink">harper is who?</a>
+      <a href="{{ '/about' | relative_url }}" class="navlink">about</a>
       <a href="{{ '/posts' | relative_url }}" class="navlink">writing</a>
+      <a href="{{ '/contact' | relative_url }}" class="navlink">contact</a>
       <a href="javascript:void(0)" class="closebtn" id="closebtn" onclick="closeNav()">
         ×
       </a>
@@ -371,6 +383,7 @@
     <div class="content" id="main-content">
       {{ content }}
       <img src="{{ '/assets/images/trans.png' | relative_url }}" class="content-image">
+      
 <div class="post-nav">
         {% if page.next %}
           <a class="prev" href="{{ page.next.url }}">
