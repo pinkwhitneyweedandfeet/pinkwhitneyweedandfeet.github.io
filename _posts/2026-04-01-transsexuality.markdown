@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "a tucute manifesto"
+subtitle: "on transmedicalism and conceptual negotiation"
+date:   2026-06-05 16:56:27 -0500
+image: "/assets/images/tucute.png"
+categories: writing
+permalink: /:categories/:title/
+embedimage: "/assets/images/heliogabalus2big.png"
+coverimage: <i>Léonidas aux Thermopyles</i>, Jacques-Louis David, 1814
+tags: [language and metaphysics, gender]
+published: false
+author: anita
+---
+<beginquote>...there are no 'depths'; there is surface everywhere.</beginquote>
+<credit>Carnap, Hahn, and Neurath, in <i>The Scientific Conception of the World</i></credit>
+<br>
+<!--more-->
+<h2>what should transness be? (introduction)</h2>
+It's best to frame the dispute between transmedicalists and their enemies, then, as a <i>pragmatic</i> one; that is, one involving questions about which ways of organizing our concepts are most fruitful for the work to which these concepts are put (particularly, the project of trans liberation). 
+
+<h2>transness-as-identity</h2>
+On first blush, we might intuitively define transness as a difference between one's gender (identity) and one's sex. The obvious issue, though, is that (if we are to believe that sex and gender are different <i>tout court</i>) <i>everyone</i> is made transgender on this view, because sex and gender <i>just are</i> two different things. Individuals have genders (whether we take these to be matters of social position, self-identification, or whatever else), and <i>on top of</i> these genders, they have sexes: our sexes are not social positions, nor are they conferred by self-identification (or whatever else), but genders are.
+
+The definition is intuitively plausible only for the reason that we analogically describe both sexes and genders as 'female' or 'male' , which produces the <i>appearance</i> that they can be identical. But belonging to the sex 'female', and belonging to the gender 'female', are different things. In no case is one person's membership in one category identical to their membership in the other, because the categories are distinct and involve different criteria of application.
+
+This conceptual mire is somewhat harder to navigate than it seems. The issue seems trivial, but the immediately obvious solutions all end up failing. For example, one might <i>embrace</i> the zeugma pointed out in the last paragraph, and say that transness amounts to having an x gender identity but a non-x sex, where 'x' can be substituted (regardless of possible equivocation) for the names of any of the genders. A trans woman would be someone with a female gender identity but a non-female sex, for example. But this solution improperly connects transness to contingent features of our language: it is only a matter of historical circumstance that the genders and the sexes can be called by the same names. It is entirely possible to imagine a world where there is no overlap between our sex vocabulary and our gender vocabulary (some believe that this is actually the case in English!), and (given the zeugma-embracing proposal) such a world would be, again, populated only by transgender people.
+
+One might, alternatively, define 'gender identity' in a way which avoids the zeugma. Gender identities might be (somehow) content-bearing states, directed towards any of the sexes, and one's gender identity differs from one's sex just in case the *content* of one's gender identity differs from one's sex. For example, one might take a gender identity to just be the sex that one takes onself to be, and if one takes onself to be male, while really being female, then one is trans. This sort of view, though, seems to presume that trans people are identifying as belonging to a *sex* (and not a *gender*) that differs from the one they were assigned at birth. But this places the position in a bind. If we *do* think that trans people are identifying as sexes (and not as genders) different from the ones they were assigned at birth, then to call them trans *just is* to deny that they really are that sex (since, as stipulated by the view, being trans requires that one's actual sex differs from the sex that is the target of one's gender identity), and the label 'trans' becomes intrinsically invalidating. But if we *do not* think that trans people are identifying as sexes (but, instead, are identifying as genders) different from ones they were assigned at birth, then a supposition of the view is false (and nobody would count as trans).
+
+To avoid this, one might suppose that gender identities have a 'mind-to-world' direction of fit, as opposed to a 'world-to-mind' one. That is, rather than being beliefs, gender identities could be (something like) *desires*. So, asserting that trans people do not belong to the sexes as which they identify (in calling them trans) is not invalidating *per se*, as they are not, necessarily, taking themselves to belong to the sex. There are, however, reasonable doubts to be had about how nicely this view plays with other pro-trans commitments. Namely, if we understand our genders to depend on our gender identities (and, as the view posits, our gender identities to be desires), it becomes questionable whether or not many *cis* men and women are men and women, respectively. Do cis women have a desire to be women? Or do swaths of them just take it that they *are* women, instead?
+
+<h3>a second stab</h3>
+On my view (which I take to be a version of transness-as-identity), one is trans just in case the gender as which one identifies does not *descend from* (and is not identical to) the one they were assigned, by the dominant culture into which they were born, at birth. Fully understanding what this means will take some unpacking.
+
+Firstly, I take it that trans-inclusive and -exclusive communities are operating with *entirely distinct* sets of gender concepts. I elaborate this in more detail in a <a href="{{ 'writing/dialects-charity-amelioration' | relative_url }}">prior blogpost</a> of mine, but the gist of the view is that our gender terms ('female,' 'male,' 'nonbinary,' etc.) are polysemous; not in the way that 'mouse' is polysemous (in having two meanings between which speakers are prone to switch depending on the context), but in the way that 'pants' is (in having two separate meaning among two separate groups of speakers, each of which are not prone to contextually adopt the terms' other meaning).
+
+This view notwithstanding, I do take it that the trans-inclusive concept of 'woman' *descends from* the trans-exclusive one, in the same way that 'gender' descends from the Old French 'genre', or 'femme' (the lesbian label) from the modern French 'femme' (woman). The gender itself (and not just the label) can be said to descend from another gender too, in the same way that other cultural products (like Christmas) can be said to descend from prior ones (like Yuletide).
+
+There is a needle to thread in understanding my sense of 'descent.' Certain cultural products might have been inspired by, contrasted with, or otherwise significantly dependent on past cultural products while nonetheless not descending therefrom. LaVeyan Satanism bears this sort of relation to Christianity, for example. Nonetheless, in my sense of the term, LaVeyan Satanism does not *descend from* Christianity. For a cultural product to directly descend from another there must be some (loose, not strictly logical) identity between the two; it must be one cultural product as *borrowed by*, *copied* or *transferred into* another culture. Christmas (or, at least, some of its traditions) are borrowings from ancient pagan religious practice, and so (these traditions of) Christmas descend from these practices. The same is the case for the words 'genre' and 'gender.' The same, however, is not so for LaVeyan Satanism: LaVeyan Satanism is not Christianity-as-transferred-into-another-culture, but is only *causally dependent* on Christianity (and, therefore, does not descend from Christianity).
+
+So, although 'woman' (as used in exclusive contexts) and 'woman' (as used in inclusive contexts) are *distinct*, the second descends from the first. This doesn't seem incredibly controversial, but to support this belief, note that (1) trans subcultures (and their linguistic practice) grew out of mainstream cisnormative cultures, and (2) norms originally borne only by mainstream cisnormative culture's concept of 'woman' are borne now also by trans subcultures' concept of 'woman'. Trans women are expected to cover their chests or are permitted to identify as lesbian, for example. This sharing of norms, in other cases, is a good clue to a cultural products' ancestors (Yuletide's 12 days of feasting and the 12 days of Christmas, for example).
+
+Finally, as far as I mean it here, one is 'assigned' a gender when they meet the criteria of application for that gender within a given cultural context. Within dominant (western) cisnormative patriarchical contexts, the criteria of application for the genders are biological, but these criteria shift in alternative cultural contexts.
+
+Given these clarifications, we can consider a few cases. Take a prototypical trans woman, who was assigned male at birth and expected to obey norms of masculinity but subsequently began identifying as a woman. The gender 'female' does *not* descend from the gender 'female' (nor is the a relation of descend between the labels), so such a woman is rightly classed as trans, on my view. A prototypical cis woman is classed correctly, too: the gender as which she identifies (female) is either identical to the gender she was assigned at birth (if she is operating with a biological conception of womanhood), or descends from the gender she was assigned at birth (if she is operating with another conception).
+
+The primary improvement on the first-blush conception of transness-as-identity is incorporating the notion of 
+
+<h2>transness-as-medical</h2>
+The conception of transness-as-medical is harmfully *smoothing over* an important distinction that exists among cissexuals, viz., among those who

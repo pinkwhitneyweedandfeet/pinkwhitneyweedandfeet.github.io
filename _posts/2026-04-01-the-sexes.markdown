@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "(what) the sexes shouldn't be"
+subtitle: "a user's guide to wokeist standard english (2 of 4)"
+date:   2026-06-05 16:56:27 -0500
+image: "/assets/images/decadence1.png"
+categories: writing
+permalink: /:categories/:title/
+embedimage: "/assets/images/decadencebig.png"
+coverimage: <i>Les Romains de la décadence</i>, Thomas Couture, 1847
+tags: [language and metaphysics, gender]
+published: false
+author: anita
+---
+<beginquote>If someone does not believe in fairies, he does not need to teach his children ‘There are no fairies’; he can omit to teach them the word ‘fairy’</beginquote>
+<credit>Ludwig Wittgenstein, <i>Zettel</i></credit>
+<br>
+<!--more-->

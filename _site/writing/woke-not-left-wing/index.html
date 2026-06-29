@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta property="og:title" content="woke, not left-wing">
+  <meta property="og:description" content="or: why i don't like talking about politics spatially">
+  <meta property="og:image" content="http://localhost:4000/assets/images/polcompbig.png">
+  <meta property="og:url" content="http://localhost:4000/writing/woke-not-left-wing/">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="/assets/images/trans.png" type="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="woke, not left-wing">
+  <meta name="twitter:description" content="or: why i don't like talking about politics spatially">
+
+  <meta name="twitter:image" content="/assets/images/polcompbig.png">
+
+  <meta name="theme-color" content="#000000"/>
+  <meta charset="UTF-8">
+  <title>woke, not left-wing</title>
+  <style>
+    :root {
+  --bg : #F7D6E8;
+  --text: #3a1430;
+  --bg2: #FAE8F2;
+  --text-light: #6b3c5f;
+  --link: #c0179b;
+  --footnote: rgb(107, 28, 180);
+    }
+
+    [data-theme="dark"] {
+  --bg: #1a0a15;
+  --text: #e8d6f7;
+  --bg2: #2a1a25;
+  --text-light: #caafe0;
+  --link: #ff6bdb;
+  --footnote: #0be7f7;
+}
+
+
+    body {
+        margin: 0;
+        display: flex;
+        font-family: "Times New Roman", Times, serif;
+    }
+
+    .sidebar {
+      width: 0px;
+      background: #ffffff;
+      color: #000000;
+      padding-top: 20px;
+      height: 100vh;
+      box-sizing: border-box;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 10;
+    }
+
+    .siderbar a {
+      overflow: hidden;
+    }
+
+    .sidebar h1 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #000000;
+      text-decoration: none;
+      margin: 10px 0;
+    }
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .main-area {
+  flex: 1;
+  min-height: auto;
+  background-color: var(--bg);
+  background-image:
+    url('/assets/images/falling-stars.gif'),
+    url('/assets/images/falling-stars.gif'),
+    url('/assets/images/backgroundleft28.png?v=2'),
+    url('/assets/images/backgroundright2888.png?v=2');
+  background-position:
+    left center,
+    right center;
+  background-repeat: 
+    repeat,
+    no-repeat, 
+    no-repeat;
+  background-size:
+    calc((100% - 1500px) / 2) auto,
+    calc((100% - 1500px) / 2) auto,
+    calc((100% - 950px) / 2) 100%,
+    calc((100% - 950px) / 2) 100%;
+  background-attachment: fixed;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+[data-theme="dark"] .main-area {
+  background-image: 
+    url('/assets/images/falling-stars-dark.gif'),
+    url('/assets/images/backgroundleft-dark.png'),
+    url('/assets/images/backgroundright-dark.png');
+}
+
+    .bgimg {
+      filter: invert();
+    }
+
+    .content {
+      background: var(--bg) !important;
+      color: var(--text) !important;
+      padding-top: 10px;
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-bottom: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      margin-top: 0px;
+      position: relative;
+    }
+    
+    .footnote-ref {
+      color: var(--footnote);
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    .footnote-ref.expanded {
+      background: var(--footnote);
+      color: #40024d;
+    }
+
+    .footnote-expansion {
+      margin: 20px;
+      padding-top: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+      display: none;
+      position: relative;
+    }
+
+    .footnote-expansion.show {
+      display: block;
+    }
+
+    .footnote-expansion::before {
+      content: '*';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: var(--footnote);
+      font-size: 24px;
+    }
+
+    .footnote-expansion-content {
+      color: var(--text-light);
+      line-height: 1.2;
+      font-size: 1em;
+    }
+
+    .footnote-expansion-close {
+      margin-top: 15px;
+      color: var(--footnote);
+      cursor: pointer;
+      font-size: inherit;
+      text-align: right;
+    }
+
+    .footnote-expansion-close:hover {
+      color: var(--footnote);
+    }
+
+    h1 {
+      margin-top: 10px;
+      margin-bottom: 1px;
+    }
+
+    h2 {
+      margin-bottom: 1px;
+    }
+
+    h4 {
+      margin-bottom: 1px;
+      margin-top: 1px;
+      font-style: italic;
+    }
+
+    frontmatter {
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    p {
+      margin-top: 0px; 
+      line-height: 1.2; 
+    }
+
+    a {
+      color: var(--link);
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-style: solid;
+    }
+
+    li {
+      line-height: 1.2;
+    }
+
+      blockquote {
+      border-left: 2px solid  var(--text-light);
+      color: var(--text-light);
+      padding: 3px 10px;
+      margin-left: 10px;
+      line-height: 1.2; 
+    }
+
+      .content-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-height: 100px;
+      max-width: 100px;
+      padding-top: 60px;
+    }
+
+    .nav-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-height: 25px;
+      max-width: 25px;
+      padding-top: 0px;
+      margin: 0;
+      padding: 0;
+    }
+
+    hr {
+      color: #fff;
+      margin-bottom: 0px;
+    }
+    
+      .post-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--link);
+    text-decoration: underline;
+    text-align: center;
+  }
+
+  .post-subtitle {
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .post-date {
+    font-size: 14px;
+    color: var(--text-light);
+    text-align: center;
+  }
+  .post-nav {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .post-nav .prev {
+    margin-right: auto;
+  }
+
+  beginquote {
+    text-align: justify;
+    display: block;
+    font-style: italic;
+    color: var(--text-light);
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+
+  credit {
+    text-align: right;
+    display: block;
+    color:var(--text-light);
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+  .tooltip {
+  position: relative;
+  display: inline-block;
+  text-decoration: underline dotted #fff;
+}
+
+/* Show the tooltip text on hover */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+  p + ol, ol + p {
+    margin-top: -15px;
+  }
+
+  .post-nav .next {
+    margin-left: auto;
+  }
+    /* les portables */
+    /* les portables */
+@media screen and (max-width: 1200px) {
+  body {
+    flex-direction: column;
+    background-color: #000000;
+    overflow-x: hidden;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    background: #000000;
+    color: #ffffff;
+    box-sizing: border-box;
+  }
+
+  .sidebar h1 {
+    margin-bottom: 0;
+    font-size: 30px;
+    color: #ffffff;
+  }
+
+  .sidebar nav {
+    display: flex;
+    font-size: 30px;
+    gap: 20px;
+  }
+
+  .sidebar a {
+    display: inline;
+    font-size: 30px;
+    margin: 0;
+    color: #ffffff;
+  }
+
+  /* Hide the nav buttons completely on mobile */
+  .closebtn, .openbtn {
+    display: none !important;
+  }
+
+  .main-area {
+    margin-left: 0;
+    padding: 0px;
+    background-image: none;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100vh; /* Changed from height: auto */
+    image-rendering: pixelated;
+    box-sizing: border-box;
+    position: relative; /* Added */
+  }
+
+  .content {
+    padding: 25px;
+    margin-bottom: 0; /* Ensure no bottom margin */
+  }
+
+  html, body {
+    overflow-x: hidden;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footnote-expansion {
+    margin: 20px -25px;
+    padding: 20px 25px 20px 40px;
+  }
+}
+
+.closebtn {
+  right: -50px;
+}
+
+.openbtn {
+  right: -50px;
+}
+
+.closebtn,
+.openbtn {
+  position: absolute;
+  transform: translateY(-50%);
+  font-size: 36px;
+  cursor: pointer;
+  color: #ffffff !important;
+  background: none;
+  border: none;
+  top: 50%;
+  padding: 0;
+}
+  </style>
+</head>
+<body>
+  <div class="main-area">
+    <div class="content" id="main-content">
+      
+<div class="post-nav" style="display: flex; align-items: center; margin-top: 0px !important;">
+  <span style="flex: 1; text-align: left;">
+    <div>
+    <a href="/blog">₍^. .^₎⟆ all posts</a>
+</div>
+  </span>
+    <span>
+    <a href="#" class="theme-toggle" style="flex: 1; text-align: center;" onclick="toggleTheme(); return false;">lightswitch</a>
+  </span>
+  <span style="flex: 1; text-align: right;">
+      <a href="/">home ฅ(ᵔ꒳ ᵔマ.ᐟ<</a>
+  </span>
+</div>
+<div>
+
+<br>
+      <div style="border: 1px solid var(--text);">
+    <img src="/assets/images/polcomp.png" style="width: 100%; height: 200px; object-fit: cover; display: block; border-bottom: 1px solid var(--text); object-position: middle;">
+</div>
+<h1 style="margin-top: 0px">woke, not left-wing</h1>
+(or: why i don't like talking about politics spatially)
+<br><br>
+<div style="display: flex; align-items: center; margin-top: -16px; margin-bottom: 16px;">
+  <span style="flex: 1; text-align: left;">
+      <frontmatter>  ~1403 words (~5 minute read)</frontmatter>
+  </span>
+  <span style="flex: 1; text-align: right;">
+      <frontmatter>19 05 2026</frontmatter>
+<frontmatter><a href="/author/anita"></a></frontmatter>
+  </span>
+</div>
+<hr style="border: none; height: 2px; background-color: var(--text);">
+<br>
+<!--more-->
+<h2>introduction</h2>
+<p>Linguistic metaphors are broad, abstract connections between two different domains of vocabulary in a natural language which enable the discussion of one in the terms of the other. For example, in English, there exists a metaphor between our talk of money and our talk of time; one spends time, saves time, invests time, wastes time, and so on. In linguistics jargon, monetary talk is the ‘source domain,’ the model for the ‘target domain’ of temporal concepts. This metaphor, naturally, makes us regard time as analogous to money, as a valuable resource to be conserved and carefully expended.</p>
+
+<p>A similar sort of metaphor exists between our talk of political belief and our talk of spatial location. At bottom is our talk of one’s intrinsically being ‘left-wing,’ ‘right-wing,’ or a ‘centrist,’ which then models our talk of the relations between ideologies as being further right or further left than one another. In contemporary culture, this sort of talk has been further supplemented by talk of square ‘compasses’ whose y-axes represent one’s position on the legitimate use of state power, or ‘cubes’ whose z-axes represent one’s position on social or cultural issues. There are a number of reasons to trash this metaphor.</p>
+
+<h2>qualitative and quantitative differences between political positions</h2>
+<p>Firstly, (and, I think, most importantly), the spatial metaphor overemphasizes quantitative differences between political perspectives, either unduly subordinating or entirely ignoring far more consequential <em>qualitative</em> ideological differences.</p>
+
+<p>What does this mean? Consider the nature of this metaphor’s ‘source domain,’ talk of spatial position. Spatial talk is quantitative, involving magnitudes which can be compared. That is, every location in the universe is commensurable: point x is this many inches, meters, or lightyears away from point z, and between them is contiguous space which can, in-principle, be traversed. Getting me to Andromeda is (although this is easier said than done) only a matter of altering my coordinates by making a series of continuous and quantitative changes to my body.</p>
+
+<p>Talking about ideologies spatially would lead us to believe that they function in the same way. A liberal is on the same plane as a Marxist, and there exists continuous ‘political space’ between them without any jumps or starts. Going from a Marxist to a liberal is just a matter of twisting a few dials; maybe turning ‘down’ the authority meter and turning ‘left’ the economics meter. But this talk, really, doesn’t seem to be fitting. The Marxist has an entirely different starting point from the liberal. That is, they aren’t simply different distances away from the origin on one Cartesian grid, but on different grids entirely.</p>
+
+<p>To fill out this intuition, consider two polar American voters. Bill is a protestant MAGA pro-life Republican, and Vivian is an atheist progressive transfeminist Democrat. Bill is pro-life because he thinks that the Bible prohibits abortion. Vivian is pro-choice because she thinks that one’s bodily autonomy is always inviolable. What dials on Bill can we turn to get him to Vivian’s position? The ‘Christian’ dial? There, obviously, is not such a thing in any interesting sense; Bill would need to undergo a qualitative change, a change in sect or religion or hermeneutic approach, before the pro-choice position were even an option. And these sorts of changes just aren’t quantitative. The jumps from Baptism to Presbyterianism, from Biblical inerrancy to errancy, from Christian to secular, are essentially qualitative, involving the swapping of entirely contrary beliefs with no gradual difference between. The belief that the Bible is inerrant and prohibits abortion can’t just be reduced somewhat for Bill’s politics to improve; it has to be entirely given up. There can’t just be a <i>turning of dials</i>, but also a <i>flipping of switches</i>. The same sort of story, plausibly, can be applied to the Marxist and the liberal. Is there a ‘labor theory of value’ dial that you turn, or is this just a belief that you need to take or leave? A ‘historical materialism’ dial? What x-value do you need on the political compass before the dialectic kicks in?</p>
+
+<p>There are a few caveats. I think, firstly, that talk of political closeness is fine in some restricted contexts. The deontological and consequentialist libertarians might come at the issue from entirely different starting points, but are nonetheless prone to join forces in service of similar goals. Reifying this closeness with a spectrum or compass, though, naturally invites confused extensions of this talk that go beyond its pragmatic function in forming or dissolving political bonds. Secondly, there may really be some ‘dials’ that one can turn to generate political differences, but I don’t take it that these dials allow you to traverse the deep boundaries that exist between (for example), the Marxist and the liberal. There might exist a ‘shattered’ political compass, on which some subcategory of Marxists (who share almost entirely in qualitative ideological properties) can be truthfully said to bear exclusively quantitative political differences to one another, but these intraideological quantitative differences do not model or explain deep, interideological disagreement.</p>
+
+<p>This is my biggest issue with the spatial metaphor and its representatives (like the political spectrum or the political compass). It causes us to think that certain positions are commensurable and ‘lie on the same plane.’ There are, however, a few other issues I have that are a bit less important.</p>
+
+<h2>other stuff</h2>
+<p>I think, firstly, that it’s just weird to think of political opinions as ever possibly ‘balancing each other out.’ A rabid transphobe who is also a militant vegan doesn’t occupy a position in the center of anything. They have two extreme positions, and doing arithmetic on the both of them to yield something close to zero makes no sense. This person is two sorts of extremist and no sort of centrist.</p>
+
+<p>Secondly, nobody even agrees on what these terms mean. Trotskyists, Hoppeans, monarchists, and establishment Democrats all use the words ‘left-’ and ‘right-wing’ to describe entirely different sorts of positions. One and the same market liberal is a leftist to a laissez-faire capitalist and a rightist to a communist. There’s nothing common in their usage of these pairs of terms.</p>
+
+<p>Thirdly, these terms are just stale and old and decrepit. The French Revolution, from which the metaphor originates, happened two centuries ago, and an entirely new set of issues is relevant in an entirely different set of contexts. The words have lost their old oomph, and, for reasons alongside those listed in the prior paragraph, don’t have much significance for modern speakers.</p>
+
+<h2>what to say in replacement?</h2>
+<p>For this reason, it’s better to use words whose political significance arose only recently and have been thereby been naturally tailored to map the contours of the contemporary political landscape. ‘Right-wing’ was a word tailored for the political landscape 200 years ago in France, but political movements wax and wane and ebb and flow and appear and disappear, and this word just isn’t fit to describe the situation we find ourselves in now. They are old tools for an old time. But there are new tools that we have whose usage originated in reaction to (and for the purposes of charting) our contemporary political situation among still-living political actors.</p>
+
+<p>What I say here I mean entirely seriously: in the contemporary United States, these words (in addition to the obvious ones, like ‘Democrat’ and ‘Republican,’) are ‘woke’ and ‘chud.’ Any politically active young person alive now knows, intuitively, the significance of these words, and they call to mind presently salient ideological archetypes far more potently than words like ‘left’ and ‘right’ do. Of course, these terms exist alongside others tailored for the present political climate (‘MAGA,’ ‘groyper,’ ‘NRX’), and still other older ones which describe more perennial political tendencies (‘liberal,’ ‘Marxist,’ ‘Hobbesian’) or ones whose content is relatively simple (‘anarchist,’ ‘monarchist,’ ‘autocrat’), all of which I find palatable. But, broadly speaking, ‘left’ and ‘right’ are terms apt for replacement, and their closest modern analogues are ‘woke’ and ‘chud.’</p>
+
+<p>Fortunately, the culture has been shifting in this direction for some time. It’s a real travesty that ‘woke’ was appropriated from AAVE for the underhanded purposes of American Republicans, and the reclaiming of this word by progressive political groups is a step towards ameliorating this injustice. On top of avoiding the issues with the spatial metaphor, this reclamation of ‘woke’ returns the word closer to its original meaning (referring to individuals who were aware of systemic injustices) and refits the tools of chuds for progressive aims.</p>
+
+      
+<div class="post-nav" style="display: flex; align-items: center;">
+  
+  <span style="flex: 1; text-align: left;">
+    
+      <a class="prev" href="/writing/dialects-charity-amelioration/">← dialects, charity, and amelioration</a>
+    
+  </span>
+
+   
+  <span style="flex: 1; text-align: center;">
+    <a href="/blog">₍^. .^₎⟆ retourne au blog</a>
+  </span>
+  
+  <span style="flex: 1; text-align: right;">
+    
+      <a class="next" href="/writing/border-patrol-at-themiscyra/">border patrol at themiscyra →</a>
+    
+  </span>
+</div>
+ 
+<p style="text-align: center; margin: 1em 0 0 0;">ou</p>
+
+<br>
+ 
+  <a href="/" style="display: block; text-align: center;">ฅ(ᵔ꒳ ᵔマ.ᐟ< retourne à l'accueil</a>
+
+
+  <script>
+    function showFootnote(event, text) {
+      event.preventDefault();
+      event.stopPropagation();
+      const refElement = event.target;
+      const existingExpansion = document.querySelector(`.footnote-expansion[data-ref-id="${refElement.dataset.footnoteId}"]`);
+      if (existingExpansion) {
+        closeExpandedFootnote(existingExpansion.querySelector('.footnote-expansion-close'));
+        return;
+      }
+      closeAllExpandedFootnotes();
+      refElement.classList.add('expanded');
+      let insertAfter = findInsertionPoint(refElement);
+      const expansion = document.createElement('div');
+      expansion.className = 'footnote-expansion show';
+      expansion.innerHTML = `
+        <div class="footnote-expansion-content">${text}</div>
+        <div class="footnote-expansion-close" onclick="closeExpandedFootnote(this)">
+          clique ici pour fermer /ᐠ - ˕ -マ Ⳋ
+        </div>
+      `;
+      
+      if (!refElement.dataset.footnoteId) {
+        refElement.dataset.footnoteId = `footnote-${Date.now()}`;
+      }
+      expansion.dataset.refId = refElement.dataset.footnoteId;
+      insertAfter.parentNode.insertBefore(expansion, insertAfter.nextSibling);
+    }
+
+    function findInsertionPoint(element) {
+      let current = element;
+      const blockElements = ['P', 'DIV', 'BLOCKQUOTE', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'LI', 'PRE', 'ARTICLE', 'SECTION'];
+      
+      while (current && current !== document.body) {
+        if (blockElements.includes(current.tagName)) {
+          return current;
+        }
+        current = current.parentElement;
+      }
+      return element;
+    }
+
+    function closeExpandedFootnote(closeButton) {
+      const expansion = closeButton.closest('.footnote-expansion');
+      if (!expansion) return;
+      const refId = expansion.dataset.refId;
+      if (refId) {
+        const refElement = document.querySelector(`[data-footnote-id="${refId}"]`);
+        if (refElement) {
+          refElement.classList.remove('expanded');
+        }
+      }
+      expansion.remove();
+    }
+
+    function closeAllExpandedFootnotes() {
+      document.querySelectorAll('.footnote-expansion').forEach(exp => {
+        const closeBtn = exp.querySelector('.footnote-expansion-close');
+        if (closeBtn) closeExpandedFootnote(closeBtn);
+      });
+      
+      document.querySelectorAll('.footnote-ref.expanded').forEach(ref => {
+        ref.classList.remove('expanded');
+      });
+    }
+    document.addEventListener('click', function(event) {
+      if (!event.target.classList.contains('footnote-ref') && 
+          !event.target.closest('.footnote-expansion')) {
+        closeAllExpandedFootnotes();
+      }
+    });
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeAllExpandedFootnotes();
+      }
+    });
+  </script>
+  <script>
+  // Check for saved theme preference or default to light
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
+  function toggleTheme() {
+    const theme = document.documentElement.getAttribute('data-theme');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  }
+</script>
+</body>
+</html>

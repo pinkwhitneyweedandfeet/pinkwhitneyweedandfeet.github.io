@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div style="border: 1px solid var(--text);">
+    <img src="{{ page.image | relative_url }}" style="width: 100%; height: 200px; object-fit: cover; display: block; border-bottom: 1px solid var(--text); object-position: middle;">
+</div>
+<h1 style="margin-top: 0px">{{ page.title }}</h1>
+({{ page.subtitle }})
+<br><br>
+<div style="display: flex; align-items: center; margin-top: -16px; margin-bottom: 16px;">
+  <span style="flex: 1; text-align: left;">
+      <frontmatter>{% assign words = page.content | number_of_words %} {% assign minutes = words | divided_by: 250 | ceil %} ~{{ words }} words (~{{minutes}} minute read)</frontmatter>
+  </span>
+  <span style="flex: 1; text-align: right;">
+      <frontmatter>{{ page.date | date: "%d %m %Y" }}</frontmatter>
+<frontmatter><a href="{{ '/author/' | append: page.author | relative_url }}">{{ author_data.name }}</a></frontmatter>
+  </span>
+</div>
+<hr style="border: none; height: 2px; background-color: var(--text);">
+<br>
+{{ content }}

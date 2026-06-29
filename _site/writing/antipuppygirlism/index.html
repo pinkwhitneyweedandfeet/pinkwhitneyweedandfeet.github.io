@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta property="og:title" content="antipuppygirlism without the bullshit">
+  <meta property="og:description" content="or: on transracialism, amelioration, and animal liberation">
+  <meta property="og:image" content="http://localhost:4000/assets/images/dogaltbig.png">
+  <meta property="og:url" content="http://localhost:4000/writing/antipuppygirlism/">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="/assets/images/trans.png" type="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="antipuppygirlism without the bullshit">
+  <meta name="twitter:description" content="or: on transracialism, amelioration, and animal liberation">
+
+  <meta name="twitter:image" content="/assets/images/dogaltbig.png">
+
+  <meta name="theme-color" content="#000000"/>
+  <meta charset="UTF-8">
+  <title>antipuppygirlism without the bullshit</title>
+  <style>
+    :root {
+  --bg : #F7D6E8;
+  --text: #3a1430;
+  --bg2: #FAE8F2;
+  --text-light: #6b3c5f;
+  --link: #c0179b;
+  --footnote: rgb(107, 28, 180);
+    }
+
+    [data-theme="dark"] {
+  --bg: #1a0a15;
+  --text: #e8d6f7;
+  --bg2: #2a1a25;
+  --text-light: #caafe0;
+  --link: #ff6bdb;
+  --footnote: #0be7f7;
+}
+
+
+    body {
+        margin: 0;
+        display: flex;
+        font-family: "Times New Roman", Times, serif;
+    }
+
+    .sidebar {
+      width: 0px;
+      background: #ffffff;
+      color: #000000;
+      padding-top: 20px;
+      height: 100vh;
+      box-sizing: border-box;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 10;
+    }
+
+    .siderbar a {
+      overflow: hidden;
+    }
+
+    .sidebar h1 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #000000;
+      text-decoration: none;
+      margin: 10px 0;
+    }
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .main-area {
+  flex: 1;
+  min-height: auto;
+  background-color: var(--bg);
+  background-image:
+    url('/assets/images/falling-stars.gif'),
+    url('/assets/images/falling-stars.gif'),
+    url('/assets/images/backgroundleft28.png?v=2'),
+    url('/assets/images/backgroundright2888.png?v=2');
+  background-position:
+    left center,
+    right center;
+  background-repeat: 
+    repeat,
+    no-repeat, 
+    no-repeat;
+  background-size:
+    calc((100% - 1500px) / 2) auto,
+    calc((100% - 1500px) / 2) auto,
+    calc((100% - 950px) / 2) 100%,
+    calc((100% - 950px) / 2) 100%;
+  background-attachment: fixed;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+[data-theme="dark"] .main-area {
+  background-image: 
+    url('/assets/images/falling-stars-dark.gif'),
+    url('/assets/images/backgroundleft-dark.png'),
+    url('/assets/images/backgroundright-dark.png');
+}
+
+    .bgimg {
+      filter: invert();
+    }
+
+    .content {
+      background: var(--bg) !important;
+      color: var(--text) !important;
+      padding-top: 10px;
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-bottom: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      margin-top: 0px;
+      position: relative;
+    }
+    
+    .footnote-ref {
+      color: var(--footnote);
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    .footnote-ref.expanded {
+      background: var(--footnote);
+      color: #40024d;
+    }
+
+    .footnote-expansion {
+      margin: 20px;
+      padding-top: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+      display: none;
+      position: relative;
+    }
+
+    .footnote-expansion.show {
+      display: block;
+    }
+
+    .footnote-expansion::before {
+      content: '*';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: var(--footnote);
+      font-size: 24px;
+    }
+
+    .footnote-expansion-content {
+      color: var(--text-light);
+      line-height: 1.2;
+      font-size: 1em;
+    }
+
+    .footnote-expansion-close {
+      margin-top: 15px;
+      color: var(--footnote);
+      cursor: pointer;
+      font-size: inherit;
+      text-align: right;
+    }
+
+    .footnote-expansion-close:hover {
+      color: var(--footnote);
+    }
+
+    h1 {
+      margin-top: 10px;
+      margin-bottom: 1px;
+    }
+
+    h2 {
+      margin-bottom: 1px;
+    }
+
+    h4 {
+      margin-bottom: 1px;
+      margin-top: 1px;
+      font-style: italic;
+    }
+
+    frontmatter {
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    p {
+      margin-top: 0px; 
+      line-height: 1.2; 
+    }
+
+    a {
+      color: var(--link);
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-style: solid;
+    }
+
+    li {
+      line-height: 1.2;
+    }
+
+      blockquote {
+      border-left: 2px solid  var(--text-light);
+      color: var(--text-light);
+      padding: 3px 10px;
+      margin-left: 10px;
+      line-height: 1.2; 
+    }
+
+      .content-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-height: 100px;
+      max-width: 100px;
+      padding-top: 60px;
+    }
+
+    .nav-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-height: 25px;
+      max-width: 25px;
+      padding-top: 0px;
+      margin: 0;
+      padding: 0;
+    }
+
+    hr {
+      color: #fff;
+      margin-bottom: 0px;
+    }
+    
+      .post-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--link);
+    text-decoration: underline;
+    text-align: center;
+  }
+
+  .post-subtitle {
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .post-date {
+    font-size: 14px;
+    color: var(--text-light);
+    text-align: center;
+  }
+  .post-nav {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .post-nav .prev {
+    margin-right: auto;
+  }
+
+  beginquote {
+    text-align: justify;
+    display: block;
+    font-style: italic;
+    color: var(--text-light);
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+
+  credit {
+    text-align: right;
+    display: block;
+    color:var(--text-light);
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+  .tooltip {
+  position: relative;
+  display: inline-block;
+  text-decoration: underline dotted #fff;
+}
+
+/* Show the tooltip text on hover */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+  p + ol, ol + p {
+    margin-top: -15px;
+  }
+
+  .post-nav .next {
+    margin-left: auto;
+  }
+    /* les portables */
+    /* les portables */
+@media screen and (max-width: 1200px) {
+  body {
+    flex-direction: column;
+    background-color: #000000;
+    overflow-x: hidden;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    background: #000000;
+    color: #ffffff;
+    box-sizing: border-box;
+  }
+
+  .sidebar h1 {
+    margin-bottom: 0;
+    font-size: 30px;
+    color: #ffffff;
+  }
+
+  .sidebar nav {
+    display: flex;
+    font-size: 30px;
+    gap: 20px;
+  }
+
+  .sidebar a {
+    display: inline;
+    font-size: 30px;
+    margin: 0;
+    color: #ffffff;
+  }
+
+  /* Hide the nav buttons completely on mobile */
+  .closebtn, .openbtn {
+    display: none !important;
+  }
+
+  .main-area {
+    margin-left: 0;
+    padding: 0px;
+    background-image: none;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100vh; /* Changed from height: auto */
+    image-rendering: pixelated;
+    box-sizing: border-box;
+    position: relative; /* Added */
+  }
+
+  .content {
+    padding: 25px;
+    margin-bottom: 0; /* Ensure no bottom margin */
+  }
+
+  html, body {
+    overflow-x: hidden;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footnote-expansion {
+    margin: 20px -25px;
+    padding: 20px 25px 20px 40px;
+  }
+}
+
+.closebtn {
+  right: -50px;
+}
+
+.openbtn {
+  right: -50px;
+}
+
+.closebtn,
+.openbtn {
+  position: absolute;
+  transform: translateY(-50%);
+  font-size: 36px;
+  cursor: pointer;
+  color: #ffffff !important;
+  background: none;
+  border: none;
+  top: 50%;
+  padding: 0;
+}
+  </style>
+</head>
+<body>
+  <div class="main-area">
+    <div class="content" id="main-content">
+      
+<div class="post-nav" style="display: flex; align-items: center; margin-top: 0px !important;">
+  <span style="flex: 1; text-align: left;">
+    <div>
+    <a href="/blog">₍^. .^₎⟆ all posts</a>
+</div>
+  </span>
+    <span>
+    <a href="#" class="theme-toggle" style="flex: 1; text-align: center;" onclick="toggleTheme(); return false;">lightswitch</a>
+  </span>
+  <span style="flex: 1; text-align: right;">
+      <a href="/">home ฅ(ᵔ꒳ ᵔマ.ᐟ<</a>
+  </span>
+</div>
+<div>
+
+<br>
+      <div style="border: 1px solid var(--text);">
+    <img src="/assets/images/dogalt.png" style="width: 100%; height: 200px; object-fit: cover; display: block; border-bottom: 1px solid var(--text); object-position: middle;">
+</div>
+<h1 style="margin-top: 0px">antipuppygirlism without the bullshit</h1>
+(or: on transracialism, amelioration, and animal liberation)
+<br><br>
+<div style="display: flex; align-items: center; margin-top: -16px; margin-bottom: 16px;">
+  <span style="flex: 1; text-align: left;">
+      <frontmatter>  ~3352 words (~13 minute read)</frontmatter>
+  </span>
+  <span style="flex: 1; text-align: right;">
+      <frontmatter>27 05 2026</frontmatter>
+<frontmatter><a href="/author/anita"></a></frontmatter>
+  </span>
+</div>
+<hr style="border: none; height: 2px; background-color: var(--text);">
+<br>
+<beginquote>...why not leave it altogether, and become a puppy?</beginquote>
+<credit>Jay Szpilka, <i>What Puppygirls Know?</i></credit>
+<p><br />
+<a href="https://bundleofstyx.substack.com/p/dump-your-puppygirl?r=6jb0qs&amp;utm_medium=ios&amp;triedRedirect=true">this</a> is the bullshit, by the way
+<br />
+<!--more--></p>
+<h2>what's wrong with transracialism? (introduction)</h2>
+<p>Why can’t someone identify as black, and thereby become black? This question is particularly pressing for us who think that one can identify as a woman, and thereby become a woman. There is a pertinent (even if ultimately poor) parity between the two; any satisfying response to the transracial question, it seems, can just be word-swapped into transphobia. ‘Your race is determined by this-and-this biological property,’ for example, becomes ‘your gender is determined by this-and-this biological property.’ In the absence of a compelling symmetry breaker, it seems that we’re committed to the validity of transracial identity just as much as we’re committed to the validity of transgender identity.</p>
+
+<p>Philosophers Robin Dembroff and Dee Payton, in an enlightening 2020 article titled “<a href="https://www.bostonreview.net/articles/robin-dembroff-dee-payton-breaking-analogy-between-race-and-gender">Why We Shouldn’t Compare Transracial to Transgender Identity</a>,” attempt to provide such a symmetry breaker. The most important part of their argument is its methodology: Dembroff and Payton take it that our gender and race concepts are historically contingent and socially variable, and thus, depend <em>on us</em> (as opposed to <em>the world</em>) for their meaning. There are no robust, mind-independent racial or gendered essences which fill in the content of our race or gender concepts. What counts as a ‘woman,’ or as ‘black,’ is for us to determine. (For Dembroff and Payton, the failure to appreciate this fact is what makes the sort of symmetry breaker considered prior fail).</p>
+
+<p>With this approach in the background, Dembroff and Payton argue that, because these concepts are up to us, we should <em>engineer them</em> for our aims. That is, inasmuch as our traditional systems of racial and gender-based classification are insufficient for our goals, the meanings of their constituent concepts should be revised. One of our goals, one to which our race and gender concepts seem particularly suited, is the identification and elimination of racism and misogyny respectively. So, for Dembroff and Payton, we should (1) modify our race and gender concepts to ensure that they are <em>fruitful</em> for use in antiracist and feminist projects, and (2) ensure that these concepts, inasmuch as they are currently fruitful for these projects, retain the features that make them so.</p>
+
+<p>The discussion of transracialism comes after their exposition of this <span class="footnote-ref" onclick="showFootnote(event, 'My exposition of this position was sketchy. If you’d like a clearer explanation of what their ameliorativist position amounts to, I explain in somewhat more depth in &lt;a href = https://lappelduvi.de/writing/dialects-charity-amelioration/&gt;a prior post of mine&lt;/a&gt;. They also explain it pretty well in the article.')">ameliorativist</span> position. For Dembroff and Payton, a crucial aspect of racial oppression is that it accumulates intergenerationally. They are best quoted at length:</p>
+
+<blockquote>Central to this argument, then, is the observation that in the case of Blackness, inequality accumulates intergenerationally. For example, according to the Centers for Disease Control and Prevention, Black women born in the United States are three times more likely to die from pregnancy-related complications than white women. What explains this? Arline T. Geronimus, public health researcher and professor at the University of Michigan’s Population Studies Center, has argued using a series of empirical studies that the intergenerational effects of racism explain a number of decreased health outcomes for Black Americans, including lower birth weights and higher rates of pregnancy-related complications for Black women... In addition to gaps in health outcomes, wealth gaps between Black and white households also widen intergenerationally. As taxation scholar Lily Batchelder has noted, “White households are twice as likely as black households to receive an inheritance. Moreover, receipt of an inheritance is associated with a $104,000 increase in median wealth among white families, but only a $4,000 increase among black families.” Economists Darrick Hamilton and Sandy Darity argue that such intra-familial, non-merit transfers of wealth “account for more of the racial wealth gap than any other demographic and socioeconomic indicators.” While many white families accumulate wealth across generations, Black families often have little to no wealth for intrafamily transfer.</blockquote>
+
+<p>This is an especially important feature of racial oppression. If our race concepts undermine recognition of these facts, then they’ve been made <em>unfruitful</em> for antiracist aims. On this basis, Dembroff and Payton argue that our race concepts should be designed to forestall the possibility of taking up, regardless of one’s ancestors’ position in systems of racial oppression, a racial identity. But transracial identification does exactly this: it attempts to make it such that our race concepts have no important connection with one’s ancestry (and can be taken up only by identifying in a certain way). So, Dembroff and Payton argue, antiracists ought to resist transracialism, as transracialism threatens our ability to reckon with racial injustice.</p>
+
+<p>Of course, Dembroff and Payton foresee the possibility of transphobically mirroring this argument. ‘Misogyny is sex-based!’ The retort might go, ‘so transgender identification ought to be resisted by feminists!’ In response, Dembroff and Payton note that trans women really can be subjects of misogyny (and so misogyny is <em>not</em> sex-based), but don’t go to any significant lengths in arguing for this claim. They do, however, seem to offload this intellectual burden onto feminist philosopher Catherine MacKinnon, who defends this view thus:</p>
+<blockquote>under male dominance, in transitioning, trans women lose status, trans men gain it. Trans women are doubly intersectionally discriminated against as women and as trans, triply if of color. Trans men, although their gendered social standing is documented to be improved, may be seen as lesser men the ways gay men and racially subordinated men often are. Trans women, as women, become newly sexualized as targets for incursion, abuse, and devaluation; trans men, as men, no longer occupy that social location, except to the extent they may continue to appear to the male gaze as feminine men, marked by femininity for sexual and other violence (especially dangerously if it is “discovered” that they have female genitalia). In addition, when trans women have not had genital surgery (some do, many do not), they in addition become targets for violent attack by men who find their own sexual orientation challenged by “discovering” they are having sex with, or upskirting, a person with a penis (the penis as often the center of attention).<a href="https://openyls.law.yale.edu/server/api/core/bitstreams/b126929b-fe36-433d-948f-959727e8dd71/content"><sup>*</sup></a></blockquote>
+<p>Say we’re convinced of MacKinnon’s observations. This still doesn’t seem to get us all the way: note the crucial ‘in transitioning’ prepending ‘trans women lose status.’ What of trans women who haven’t yet transitioned? MacKinnon’s observations, like feminist analyses of the ways in which trans women are subjects of misogyny in general, ends up excluding some of the most vulnerable populations of trans women: those who cannot or have not yet underwent medical or social transition. Given the structure of Dembroff’s argument, if pre-transition trans women cannot be positioned as subjects of misogyny, then this vulnerable population of trans women would end up left by the wayside, and Dembroff and Payton would not seem to have any way to resist their exclusion. We’ve taken a wrong turn somewhere.</p>
+
+<h3>bridging the gap</h3>
+<p>In the scope of their article, Dembroff and Payton do not go far enough in noting that our conceptual apparatuses in regards to race and gender are up to us. They rightly point out that what counts as ‘woman’ is something we determine, but fall short of recognizing that <em>so is what counts as ‘misogyny’</em>. Dembroff and Payton appeal to an independent, free-standing concept of misogyny to stabilize trans womens’ status as women, but the concept ‘misogyny’ <em>is not free-standing in this way</em>. It is a product of our social practices just as much as genders or races themselves are, and can be the subject of ameliorative projects inasmuch as it is deficient.</p>
+
+<p>In spite of this, Dembroff and Payton (in referencing MacKinnon) do not offer any reasons to conceive of misogyny trans-inclusively. They appeal to a series of facts about the world, but, just like in the case of ‘woman’ and ‘man,’ <em>the meaning of misogyny is not up to the world</em>. It’s <em>up to us</em>. Whether or not the unique sort of oppression faced by trans women should be called ‘misogyny’ ought to be subject to the same ameliorative line of questioning to which Dembroff and Payton subject the claims of transracial people to blackness. The question is essentially <em>ethical</em>, and will not be settled by appealing to descriptive facts regarding the ways in which trans women are subjugated.</p>
+
+<p>This being said, I think that Dembroff and Payton possess the materials for producing a trans-inclusive ameliorative inquiry into ‘misogyny’. Without presupposing that these two sorts of oppression are equivalent (this is the upshot, and not a premise, of my argument), note the ways in which trans and cis women are uniquely oppressed. Trans women are deprived of medical self-determination through restrictions on HRT, SRS, and puberty blockers; their unique medical needs, if they are in need of HRT, go critically underresearched; they are objectified and fetishized; and, especially after social and medical transition, <a href="https://www.theguardian.com/commentisfree/2019/may/19/valerie-jackson-trans-women-misogyny-feminism">are violently sexually harrassed, silenced, and diminished</a>. Cis women are oppressed in incredibly similar ways: they are deprived of medical self-determination through restrictions on abortion; their unique medical needs go underresearched; they are objectified and fetishized; and are violently sexually harrassed, silenced, and diminished.</p>
+
+<p>With these observations, we’ve still only gone as far as MacKinnon, Dembroff, and Payton have alone. To meet the needs outlined at the opening of this section, we need to combine these descriptive considerations with <em>ethical</em> considerations. To do so, I want to note that it is wrong to make unmotivated distinctions in who counts as targets of which sorts of oppression. Why? One reason is briefly touched on by Dembroff, who, in a a separate article for The Guardian, notes that</p>
+<blockquote>Feminism’s history displays a pattern of (mostly white, non-disabled and financially stable) women deploying claims about difference to justify ignoring the needs of women of color, disabled women and working-class women. The exclusion of trans women risks becoming the latest manifestation of this terrible pattern.</blockquote>
+<p>These sorts of distinctions, that is, unmotivated distinctions between who counts as a subject of misogyny and who doesn’t, have historically served to exclude vulnerable populations of women from feminist projects. These distinctions allow one to pick and choose who to fight for; to maintain certain systems of oppression while purporting to fight against others. This is something that we want to prevent, and so, we ought to oppose unmotivatedly counting one class of women and not another as subjects of misogyny.</p>
+
+<p>What makes a distinction unmotivated? This, I think, can be determined by considering our aims as feminists. These are (1) to investigate and eliminate patriarchical <em>ideologies</em> consisting in and informing a series of oppressive norms, and (2) to identify, call out, and eliminate the <em>mechanisms</em> through which these norms are enforced. Mirroring this, then, a distinction (in who counts as a target of misogyny) is a distinction where there <em>is no difference</em> in either (1) the patriarchical norms being enforced, or (2) the tools of enforcement.</p>
+
+<p>That it is patriarchical norms being enforced in the case of anti-trans oppression seems clear: the norms connecting certain biological configurations and certain behaviors are unequivocally ones of the sort to which feminists ought to object. The patriarchical supposition that men should be masculine (and women feminine), at the very least, unduly constricts people’s self-expression and ensures traditional, nonsubversive behavior from women, and is thereby rightly a target of feminist critique. But this norm is the one transgressed in the case of social or medical transition among trans women. For violating this norm, socially transitioning trans women are subject, again, to the sorts of tools used to ensure normative behavior from women: they are abused, raped, silenced, objectified, and so on. <span class="footnote-ref" onclick="showFootnote(event, 'There is, without a doubt, more fine-grainedness in the sorts of oppression faced by women than can be captured only by the label ‘misogyny’, including unique phenomena like misogynoir and transmisogyny that only certain intersections of women face. When I say ‘make a distinction,’ I mean to make a distinction in who is classified as a victim of misogyny &lt;i&gt;tout court&lt;/i&gt;, and not merely to note the qualitative distinctions between the oppression faced by different intersections of women.')">To make a distinction here is contrary to our project as feminists: both cases involve the same system of oppression and the same enforcement mechanisms that we want to fight.</span></p>
+
+<p>But, still, we’ve only arrived at the claim that medically and socially transitioning trans women ought to count as subjects of misogyny. Why should we understand ‘misogyny’ such that even <em>non-transitioning</em> trans women count as targets thereof? Taking this final step requires putting forward another principle. I want to say that those who are targetted by misogyny in a way that successfully enforces patriarchical norms should not ever thereby be counted as losing their status as a target of misogyny. In a word, nobody should ever be considered as <em>oppressed out of</em> womanhood. Say, for example, that a trans woman transitions, and experiences misogyny as a woman for a few years. After this time, a ban on HRT is passed in her state, and she is forced to detransition and live as a man while she figures out her future living situation. Her detransitioning is an instance of a patriarchical norm being successfully enforced, and, given our prior criteria for who counts as subjects of misogyny, would count her as <em>losing her status</em> as a target thereof. But this is clearly unsavory: this woman should still be included in our feminist projects. She is a victim of the patriarchy, <span class="footnote-ref" onclick="showFootnote(event, 'Of course, I do believe that people who have been subjects of misogyny are able to really shed this status in a way that doesn’t entail that they continue to be a woman. Trans men, for example, do this. What’s important is the &lt;i&gt;causal story&lt;/i&gt; to be told here. A trans man’s shedding of his status as a subject of misogyny is not a consequence of an enforcement of a patriarchical norm (in most cases, it’s a consequence of his gender dysphoria). For the sort of trans woman considered above, the causal story is different: she (purportedly) ‘sheds her status as a subject of misogyny’ because of the enforcement of a patriarchical norm.')">and should not suddenly lose our attention just because she was <em>forced</em> to cease hormone treatment.</span></p>
+
+<p>My argument, in a nutshell, is that counting cis women as subjects of misogyny <em>ethically commits us</em> to counting post-transition trans women as subjects of misogyny, and counting post-transition trans women as subjects of misogyny <em>ethically commits us</em> to counting pre-transition trans women as subjects of misogyny. This allows us to complete the circuit proposed by Dembroff and Payton, and to argue that ameliorative considerations fail to rule out the validity of trans identity, although they do rule out the validity of transracial identity. We ought to understand race (and racism) in a way that allows reckoning with its generational accumulation, and we ought to understand gender (and misogyny) in a way that meets the principles outlined prior. Taking these ameliorative lines the whole way allows us to verify Dembroff and Payton’s conclusion.</p>
+
+<h2>what's in a puppygirl?</h2>
+<p>With this in mind, we can shift gears. By ‘puppygirl’ I mean any human being who calls themself a puppy. This being the case, my critique will generalize to all human beings who refer to themselves as <em>any</em> sort of oppressed animal, including (but obviously not limited to) many therians and otherkin. I take it that puppygirlism is wrong for the same reasons that transracialism is wrong: puppygirlism requires our species concepts to be appropriated in a way that prevents reckoning with important pecularities of pervasive species-based injustice against dogs. The argument, then, ought to begin with an analysis of the ways in which dogs are subjugated.</p>
+
+<h2>puppy-based oppression</h2>
+<p>Domesticated animals, as a class, are the subject of the worst atrocity to ever be perpetrated in all of human history. Over 90 billion animals are tortured to death yearly for their carcasses and secretions.<a href="https://faunalytics.org/global-animal-slaughter-statistics-and-charts/"><sup>*</sup></a> This is multiple trillions in the past five decades. There are no intuitive terms in which these numbers can be stated. There are no intuitive terms, either, in which the scale of only one animal’s suffering can be laid fully bare. It is impossible to comprehend the hell into which the innocent animals are thrust from childhood: they wade in their own shit and the corpses of their siblings, leaking pus from boils and sores and untreated infections, and are subjected to an undignified end while being mocked, kicked, and thrown around by their killers.<a href="https://watchdominion.org/"><sup>*</sup></a> In one year, this life of aimless suffering is experienced by a population of animals nearing the number of human beings to have ever lived.</p>
+
+<p>Our putative companions, dogs and puppies, are no exception to this cruelty. In 2025 alone, the United States Department of Agriculture oversaw <em>680</em> welfare standards violations in U.S. dog breeding facilities, including “dogs living in tiny cages, living in filth, without clean food or water… with painful, bleeding wounds… suffering from deadly diseases without any veterinary care… [and] left to die unnoticed from preventable causes or with no explanation at all.” In one case, “a Husky became caught in the door of his kennel. Unable to free himself and unnoticed by the licensee, he hung by one arm until he died.” In another, “enclosures failed to safely contain a puppy, allowing him to crawl out through a half-foot wide gap into a washdown gutter. The puppy entered an adjacent enclosure, where he was killed by the three dogs that lived there.” In none of these cases did the USDA take any consequential punitive action. For all 680 of these violations, including the ones just detailed, zero dog breeding licenses were revoked. At the very worst, violators received a strongly worded letter from the USDA’s department of inspections, a minimal fine, and were allowed to continue operations.<a href="https://www.aspca.org/sites/default/files/2025_usda_enforcement_report_final-v2.pdf"><sup>*</sup></a></p>
+
+<p>This is oppression in any sense of the term. These dogs’ abuse is systematically overlooked and enabled for nothing more than the sake of the pet trade. Their abuse, further, is not something which they can resist alone. The elimination of dogs’ oppression requires the intervention of human beings: no puppy can protest, petition, or revolt. The onus is on us to do that for them.</p>
+
+<h2>fruitfully defining species</h2>
+<p>This aspect of species-based oppression is incredibly important and ought not be overlooked. Speciecism is particularly heinous in that its subjects are entirely helpless, both politically and physically, and it is <em>essential</em> to our understanding of speciecism that this is so. For the same ameliorative reasons that we ought to understand racism as essentially generationally accumulating, we also ought to understand speciecism as essentially involving victims whose liberation is entirely on the burden of its perpetrators.</p>
+
+<p>So, the line between human and animal ought to be kept clear. Nobody who <em>can</em> protest, petition, or revolt, should ever be counted as an animal: it is necessary (though not sufficient) that one be politically helpless in order to ever count as a domesticated species of animal (and thereby as a subject of speciesism). Understanding our species concepts in this way makes clear upon whom, exactly, the burden of liberating animals falls, and makes further salient a critical harm of speciesistic violence. Any series of species concepts which sanctions puppygirlism will fail to meet these goals: the bulk of puppygirls are <em>not</em> politically helpless and <em>do</em> have a burden to fight for the dogs who cannot fight for themselves.</p>
+
+<h2>being a good girl (person?)</h2>
+<p>So, both puppygirlism and therianism are wrong, as both require adopting sets of species concepts which harm the aims of animal liberation. Every person, no matter how much it pains them, ought to recognize their specifically human privilege over the domesticated animals, subjects of speciesism. The wrong aim is striving to be a good girl and self-classifying as a dog; the right aim is striving to be a good person and self-classifying as a human (and going vegan).</p>
+
+
+      
+<div class="post-nav" style="display: flex; align-items: center;">
+  
+  <span style="flex: 1; text-align: left;">
+    
+  </span>
+
+   
+  <span style="flex: 1; text-align: center;">
+    <a href="/blog">₍^. .^₎⟆ retourne au blog</a>
+  </span>
+  
+  <span style="flex: 1; text-align: right;">
+    
+      <a class="next" href="/writing/which-properties/">which properties are gender properties? →</a>
+    
+  </span>
+</div>
+ 
+<p style="text-align: center; margin: 1em 0 0 0;">ou</p>
+
+<br>
+ 
+  <a href="/" style="display: block; text-align: center;">ฅ(ᵔ꒳ ᵔマ.ᐟ< retourne à l'accueil</a>
+
+
+  <script>
+    function showFootnote(event, text) {
+      event.preventDefault();
+      event.stopPropagation();
+      const refElement = event.target;
+      const existingExpansion = document.querySelector(`.footnote-expansion[data-ref-id="${refElement.dataset.footnoteId}"]`);
+      if (existingExpansion) {
+        closeExpandedFootnote(existingExpansion.querySelector('.footnote-expansion-close'));
+        return;
+      }
+      closeAllExpandedFootnotes();
+      refElement.classList.add('expanded');
+      let insertAfter = findInsertionPoint(refElement);
+      const expansion = document.createElement('div');
+      expansion.className = 'footnote-expansion show';
+      expansion.innerHTML = `
+        <div class="footnote-expansion-content">${text}</div>
+        <div class="footnote-expansion-close" onclick="closeExpandedFootnote(this)">
+          clique ici pour fermer /ᐠ - ˕ -マ Ⳋ
+        </div>
+      `;
+      
+      if (!refElement.dataset.footnoteId) {
+        refElement.dataset.footnoteId = `footnote-${Date.now()}`;
+      }
+      expansion.dataset.refId = refElement.dataset.footnoteId;
+      insertAfter.parentNode.insertBefore(expansion, insertAfter.nextSibling);
+    }
+
+    function findInsertionPoint(element) {
+      let current = element;
+      const blockElements = ['P', 'DIV', 'BLOCKQUOTE', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'LI', 'PRE', 'ARTICLE', 'SECTION'];
+      
+      while (current && current !== document.body) {
+        if (blockElements.includes(current.tagName)) {
+          return current;
+        }
+        current = current.parentElement;
+      }
+      return element;
+    }
+
+    function closeExpandedFootnote(closeButton) {
+      const expansion = closeButton.closest('.footnote-expansion');
+      if (!expansion) return;
+      const refId = expansion.dataset.refId;
+      if (refId) {
+        const refElement = document.querySelector(`[data-footnote-id="${refId}"]`);
+        if (refElement) {
+          refElement.classList.remove('expanded');
+        }
+      }
+      expansion.remove();
+    }
+
+    function closeAllExpandedFootnotes() {
+      document.querySelectorAll('.footnote-expansion').forEach(exp => {
+        const closeBtn = exp.querySelector('.footnote-expansion-close');
+        if (closeBtn) closeExpandedFootnote(closeBtn);
+      });
+      
+      document.querySelectorAll('.footnote-ref.expanded').forEach(ref => {
+        ref.classList.remove('expanded');
+      });
+    }
+    document.addEventListener('click', function(event) {
+      if (!event.target.classList.contains('footnote-ref') && 
+          !event.target.closest('.footnote-expansion')) {
+        closeAllExpandedFootnotes();
+      }
+    });
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeAllExpandedFootnotes();
+      }
+    });
+  </script>
+  <script>
+  // Check for saved theme preference or default to light
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
+  function toggleTheme() {
+    const theme = document.documentElement.getAttribute('data-theme');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  }
+</script>
+</body>
+</html>

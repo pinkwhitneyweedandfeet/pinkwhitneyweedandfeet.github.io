@@ -1,0 +1,140 @@
+---
+layout: default
+title: blog
+pagination:
+  enabled: true
+  per_page: 6
+---
+<style>
+      .content {
+    min-height: 100vh;
+  }
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 20px;
+  }
+  .post-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border: 3px solid var(--bg2);
+    padding-bottom: 30px;
+    background-color: var(--bg2);
+  }
+
+  .post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+  }
+  .post-wordcount {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .post-date {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 40px;
+    font-size: 14px;
+  }
+  .pagination a, .pagination span { color: var(--link); text-decoration: underline; }
+  .pagination .current { color: var(--text); text-decoration: none; }
+  h1 { 
+    margin-bottom: 0px; 
+  }
+  h2 { 
+    margin-top: 0px;
+    }
+</style>
+<div class="post-nav" style="display: flex; align-items: center; margin-top: 0px !important;">
+  <span style="flex: 1; text-align: left;">
+    <div>
+    <h1>₍^. .^₎⟆</h1>
+</div>
+  </span>
+    <span>
+    <a href="#" class="theme-toggle" style="flex: 1; text-align: center;" onclick="toggleTheme(); return false;">lightswitch</a>
+  </span>
+  <span style="flex: 1; text-align: right;">
+      <a href="/">home ฅ^•ﻌ•^ฅ</a>
+  </span>
+</div>
+<div>
+{% assign hai = "assets/images/akri.gif" %}
+<p>this is the page for my blog!! : D i like talking about (analytic) feminism and words and whatnot. i wish i could add like a comments section or something but all of the options with my current setup look super ugly so if you want to talk about any of it with me just ask (you probably have my contact already if ur here). i try to upload stuff like semi-frequently and i have a long backlog of stuff to write i'm just super slow.</p>
+
+<p>hyperlinks are <a href = "/blog">this color!</a> they take you elsewhere... (that one doesn't though, it takes you here)</p>
+
+<p>footnotes are <span class="footnote-ref" onclick="showFootnote(event, '<img src={{ hai | relative_url }}>')">this color!</span> they reveal otherwise flow-breaking elaborations and other footnote stuff when you click on them.</p>
+
+<h2>archive:</h2>
+<div style="margin-top: 0px;">
+  {% for post in paginator.posts %}
+  <div style="border: 5px solid var(--bg2); margin-bottom: 20px;">
+    <div style="display: grid; grid-template-columns: auto 1fr; gap: 0;">
+      <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" style="background-color: var(--bg2); width: 300px; height: 100%; object-fit: cover; object-position: top; display: block;">
+      <div style="background-color: var(--bg2); padding: 20px; display: flex; flex-direction: column;">
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <div style="font-size: 14px; color: var(--text-secondary);">{{ post.subtitle }}</div>
+        {% assign words = post.content | number_of_words %}
+        {% assign minutes = words | divided_by: 250 | ceil %}
+        <div style="font-size: 14px; color: var(--text-light); margin-top: 0.5em;">{{ words }} words ({{ minutes }} min read)</div>
+        <div style="font-size: 14px; color: var(--text-light);">{{ post.date | date: "%d-%m-%Y" }}</div>
+        <div style="margin-top: auto; padding-top: 1em;">
+          <a href="{{ post.url | relative_url }}">full post</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">&larr; newer</a>
+  {% else %}
+    <span>&larr; newer</span>
+  {% endif %}
+
+  <span class="current">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">older &rarr;</a>
+  {% else %}
+    <span>older &rarr;</span>
+  {% endif %}
+</div>
+<script>
+  document.querySelectorAll('.pagination a').forEach(link => {
+    link.addEventListener('click', () => {
+      sessionStorage.setItem('scrollY', window.scrollY);
+    });
+  });
+
+  window.addEventListener('load', () => {
+    const saved = sessionStorage.getItem('scrollY');
+    if (saved) {
+      window.scrollTo(0, parseInt(saved));
+      sessionStorage.removeItem('scrollY');
+    }
+  });
+</script>
