@@ -120,8 +120,8 @@ async function loadGoodreadsBooks() {
     
     try {
         const [currentResponse, readResponse] = await Promise.all([
-            fetch(`https://corsproxy.io/?${encodeURIComponent(`https://www.goodreads.com/review/list_rss/${userId}?shelf=currently-reading`)}`),
-            fetch(`https://corsproxy.io/?${encodeURIComponent(`https://www.goodreads.com/review/list_rss/${userId}?shelf=read`)}`)
+            fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(`https://www.goodreads.com/review/list_rss/${userId}?shelf=currently-reading`)}`),
+            fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(`https://www.goodreads.com/review/list_rss/${userId}?shelf=read`)}`)
         ]);
         
         const currentText = await currentResponse.text();
