@@ -22,7 +22,7 @@ $(document).ready(function () {
                 if (response.ok) {
                     return response.json();
                 }
-                throw new Error('Network response was not ok.');
+                throw new Error('network response was not ok.');
             });
     }
 
@@ -32,27 +32,35 @@ $(document).ready(function () {
                     try {
                         return data.track.album.image[1]["#text"];
                     } catch(e) {
-                        throw new Error("No image found")
+                        throw new Error("no image found")
                     }
                 });
     }
 
-    lastfmRequest("user.gettoptracks", { user: USERNAME, limit: "3", period: "7day" }).then((data) => {
-        var html = '<h3 class="colorchanger">weekly tracks</h3>';
-        $.each(data.toptracks.track, function (i, item) {
-            const itemid = item.mbid + '-track';
-
-            html += '<div class="music-row">';
-            html += '<img id="' + itemid + '" src="' + item.image[1]["#text"] + '">';
-            html += '<div><a href="' + item.url + '" target="_blank">' + item.name + '</a> - ' + item.artist['name'] + '</div></div>';
-
-            getImage(item).then((img) => {
-                $("#" + itemid).attr("src", img);
-            });
-        });
-        displayMusic();
-        $('#listening-to').append(html);
+    lastfmRequest("user.gettopartists", { user: USERNAME, limit: "5", period: "overall" }).then((data) => {
+    var html = '<h3 class="colorchanger">top artists (oat)</h3>';
+    
+    $.each(data.topartists.artist, function (i, item) {
+        html += '<div class="music-row" style="align-items: center;">';
+        html += '<div style="flex: 1;">';
+        html += '<a href="' + item.url + '" target="_blank">' + item.name + '</a>';
+        html += '<div style="color: var(--text-light); margin-top: 2px;">' + parseInt(item.playcount).toLocaleString() + ' scrobbles</div>';
+        html += '</div></div>';
     });
+    
+    displayMusic();
+    $('#listening-to').append(html);
+    
+    // Get first scrobble date for user
+    lastfmRequest("user.getinfo", { user: USERNAME }).then((userData) => {
+        const registered = userData.user.registered.unixtime * 1000;
+        const firstScrobble = new Date(registered).toLocaleDateString('en-US', { 
+            month: 'short', 
+            day: 'numeric', 
+            year: 'numeric' 
+        });
+    });
+});
 
     lastfmRequest("user.gettopalbums", { user: USERNAME, limit: "9", period: "7day" }).then((data) => {
         var html = '<h3 class="colorchanger">weekly 3x3</h3><div class="music-grid">';
@@ -69,64 +77,64 @@ $(document).ready(function () {
     });
 
     lastfmRequest("user.getrecenttracks", { user: USERNAME, limit: 4 }).then((data) => {
-    console.log(data);
+        console.log(data);
 
-    var items = data.recenttracks.track;
-    var isNowPlaying = items[0]["@attr"] && items[0]["@attr"].nowplaying;
-    
-    if (isNowPlaying) {
-        const item = items[0];
-        const itemid = item.mbid + '-nowplaying';
-
-        let nowPlayingHtml = '<h3 class="colorchanger">now playing</h3>';
-        nowPlayingHtml += '<div class="music-row">';
-        nowPlayingHtml += '<img id="' + itemid + '" src="' + item.image[1]["#text"] + '">';
-        nowPlayingHtml += '<div><a href="' + item.url + '" target="_blank">' + item.name + '</a> - ' + item.artist['#text'] + '</div></div>';
-
-        $('#now-playing-section').html(nowPlayingHtml).show();
-
-        getImage({ name: item["name"], artist: { name: item["artist"]["#text"] } }).then((img) => {
-            $("#" + itemid).attr("src", img);
-        });
-
-        items = items.slice(1, 4);
-    } else {
-        items = items.slice(0, 3);
-    }
-
-    let html = '<h3 class="colorchanger">recents</h3>';
-    
-    items.forEach(function(item, index) {
-        const itemid = item.mbid + '-recent-' + index;
+        var items = data.recenttracks.track;
+        var isNowPlaying = items[0]["@attr"] && items[0]["@attr"].nowplaying;
         
-        // Calculate time ago
-        const scrobbleTime = item.date ? parseInt(item.date.uts) * 1000 : null;
-        let timeAgo = '';
-        if (scrobbleTime) {
-            const now = Date.now();
-            const diff = now - scrobbleTime;
-            const minutes = Math.floor(diff / 60000);
-            const hours = Math.floor(minutes / 60);
-            const days = Math.floor(hours / 24);
-            
-            if (days > 0) timeAgo = days + 'd ago';
-            else if (hours > 0) timeAgo = hours + 'h ago';
-            else timeAgo = minutes + 'm ago';
+        if (isNowPlaying) {
+            const item = items[0];
+            const itemid = item.mbid + '-nowplaying';
+
+            let nowPlayingHtml = '<h3 class="colorchanger">now playing</h3>';
+            nowPlayingHtml += '<div class="music-row">';
+            nowPlayingHtml += '<img id="' + itemid + '" src="' + item.image[1]["#text"] + '">';
+            nowPlayingHtml += '<div><a href="' + item.url + '" target="_blank">' + item.name + '</a> - ' + item.artist['#text'] + '</div></div>';
+
+            $('#now-playing-section').html(nowPlayingHtml).show();
+
+            getImage({ name: item["name"], artist: { name: item["artist"]["#text"] } }).then((img) => {
+                $("#" + itemid).attr("src", img);
+            });
+
+            items = items.slice(1, 4);
+        } else {
+            items = items.slice(0, 3);
         }
 
-        html += '<div class="music-row">';
-        html += '<img id="' + itemid + '" src="' + item.image[1]["#text"] + '">';
-        html += '<div>';
-        html += '<a href="' + item.url + '" target="_blank">' + item.name + '</a> - ' + item.artist['#text'];
-        if (timeAgo) html += '<div style="color: var(--text-light); margin-top: 2px;">' + timeAgo + '</div>';
-        html += '</div></div>';
+        let html = '<h3 class="colorchanger">recents</h3>';
+        
+        items.forEach(function(item, index) {
+            const itemid = item.mbid + '-recent-' + index;
+            
+            // Calculate time ago
+            const scrobbleTime = item.date ? parseInt(item.date.uts) * 1000 : null;
+            let timeAgo = '';
+            if (scrobbleTime) {
+                const now = Date.now();
+                const diff = now - scrobbleTime;
+                const minutes = Math.floor(diff / 60000);
+                const hours = Math.floor(minutes / 60);
+                const days = Math.floor(hours / 24);
+                
+                if (days > 0) timeAgo = days + 'd ago';
+                else if (hours > 0) timeAgo = hours + 'h ago';
+                else timeAgo = minutes + 'm ago';
+            }
 
-        getImage({ name: item["name"], artist: { name: item["artist"]["#text"] } }).then((img) => {
-            $("#" + itemid).attr("src", img);
+            html += '<div class="music-row">';
+            html += '<img id="' + itemid + '" src="' + item.image[1]["#text"] + '">';
+            html += '<div>';
+            html += '<a href="' + item.url + '" target="_blank">' + item.name + '</a> - ' + item.artist['#text'];
+            if (timeAgo) html += '<div style="color: var(--text-light); margin-top: 2px;">' + timeAgo + '</div>';
+            html += '</div></div>';
+
+            getImage({ name: item["name"], artist: { name: item["artist"]["#text"] } }).then((img) => {
+                $("#" + itemid).attr("src", img);
+            });
         });
-    });
 
-    displayMusic();
-    $('#currently-playing').append(html);
-});
+        displayMusic();
+        $('#currently-playing').append(html);
+    });
 });

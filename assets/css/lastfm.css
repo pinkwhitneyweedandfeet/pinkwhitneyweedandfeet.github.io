@@ -24,7 +24,7 @@
 
 #music-container {
     display: grid;
-    grid-template-columns: 0.8fr 1fr 1fr;
+    grid-template-columns: 0.8fr 2fr 1fr;
     gap: 20px;
     align-items: start;
 }
@@ -85,4 +85,13 @@
 
 #top-albums .music-row div {
     display: none;
+}
+.music-row-no-image {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.music-row-no-image div {
+    font-size: 16px;
 }

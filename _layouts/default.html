@@ -2,24 +2,17 @@
 <html lang="en">
 <head>
   <meta property="og:title" content="{{ page.title }}">
-  <meta property="og:description" content="{{ page.subtitle | default: 'the call of the void' }}">
+  <meta property="og:description" content="{{ page.subtitle | default: 'harper harper harper harper' }}">
   <meta property="og:image" content="{{ page.embedimage | default: '/assets/images/embed.png' | absolute_url }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#000000">
-  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="icon" href="/assets/images/trans.png" type="image/png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ page.title | default: 'l&#39;appel du vide' }}">
-  <meta name="twitter:description" content="{{ page.subtitle | default: 'the call of the void' }}">
-{% if page.embedimage %}
-  <meta name="twitter:image" content="{{ page.embedimage }}">
-{% else %}
-  <meta name="twitter:image" content="{{ '/assets/images/embed.png' | absolute_url }}">
-{% endif %}
+  <meta name="twitter:title" content="{{ page.title | default: 'harper harper harper harper' }}">
+  <meta name="twitter:description" content="{{ page.subtitle | default: 'harper harper harper harper' }}">
+  <meta name="twitter:image" content="{{ '/assets/images/meow/ratattack.png' | absolute_url }}">
   <meta name="theme-color" content="#000000"/>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
@@ -83,16 +76,16 @@
       margin-bottom: 0;
     }
 
-    .main-area {
+.main-area {
   flex: 1;
   min-height: auto;
   background-color: var(--bg);
   background-image:
     url('{{ "/assets/images/falling-stars.gif" | relative_url }}'),
-    url('{{ "/assets/images/falling-stars.gif" | relative_url }}'),
     url('{{ "/assets/images/backgroundleft28.png" | relative_url }}?v=2'),
     url('{{ "/assets/images/backgroundright2888.png" | relative_url }}?v=2');
   background-position:
+    right center,
     left center,
     right center;
   background-repeat: 
@@ -100,20 +93,16 @@
     no-repeat, 
     no-repeat;
   background-size:
-    calc((100% - 1500px) / 2) auto,
-    calc((100% - 1500px) / 2) auto,
-    calc((100% - 950px) / 2) 100%,
-    calc((100% - 950px) / 2) 100%;
+    200px auto,
+    auto 100%,
+    auto 100%;
   background-attachment: fixed;
   padding: 0px;
   box-sizing: border-box;
 }
 
 [data-theme="dark"] .main-area {
-  background-image: 
-    url('{{ "/assets/images/falling-stars-dark.gif" | relative_url }}'),
-    url('{{ "/assets/images/backgroundleft-dark.png" | relative_url }}'),
-    url('{{ "/assets/images/backgroundright-dark.png" | relative_url }}');
+  background-image: none;
 }
 
     .bgimg {
@@ -550,7 +539,7 @@
   </script>
   <script>
   // Check for saved theme preference or default to light
-  const currentTheme = localStorage.getItem('theme') || 'light';
+  const currentTheme = localStorage.getItem('theme') || 'dark';
   document.documentElement.setAttribute('data-theme', currentTheme);
 
   function toggleTheme() {
